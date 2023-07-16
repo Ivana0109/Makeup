@@ -1,0 +1,1246 @@
+/** Shopify CDN: Minification failed
+
+Line 595:0 Transforming async functions to the configured target environment ("es5") is not supported yet
+Line 712:0 Transforming async functions to the configured target environment ("es5") is not supported yet
+
+**/
+var qtyErrorMessage = "You can't add more than 500 quantity.";
+$(document).ready(function() {
+   
+    setTimeout(function() {
+        $('.customer-default-address input[type="checkbox"]').prop('checked', true);
+    }, 100);
+
+
+    //   $.ajax({
+    //     type: 'GET',
+    //     url: 'https://homeloftsg.myshopify.com/admin/shop.json',
+    //     async: false,
+    //     dataType: 'json',
+    //     cache: false,
+    //     success: function(data){
+    //       console.log(data);
+    //     }                        
+    //   });
+
+    //   $.ajax({
+    //     type: 'GET',
+    //     url: "https://homeloftsg.myshopify.com/admin/shop.json",
+    //     dataType: 'jsonp',
+    //     crossDomain: true,
+    //     //contentType: "application/json",
+    //     //jsonpCallback: 'foo', // for caching
+    //     success: function(data){
+    //       console.log(data);
+    //     }
+    //   })
+    //   .fail(function (XHR, status, error) {
+    //     alert(XHR.responseText + '' + status + '' + error);
+    //   });
+
+    /* Cart Quantinty Update After Changed on Cart page */
+    $('.cart__qty-input').on('change', function() {
+        var prev = $(this).data('val');
+        var current = $(this).val();
+        setTimeout(function() {
+            if (prev != current) {
+                $("#mudoris").trigger("click");
+            }
+        }, 500);
+    });
+    /* Cart Quantinty Update After Changed on Cart page */
+    /* Registration Form Validation */
+    $("#registerform-submit").click(function(e) {
+        e.preventDefault();
+        var validateAccountForm = true;
+        $("#jsErrorMessage").hide();
+
+        $("#RegisterForm-FirstName")[0].setCustomValidity("");
+        $("#RegisterForm-LastName")[0].setCustomValidity("");
+        var firstname = ($("#RegisterForm-FirstName").val()).trim();
+        var lastname = ($("#RegisterForm-LastName").val()).trim();
+        var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var message = '';
+        if (firstname == "" || $("#RegisterForm-FirstName").val().match(/^\s+|\s+$/i) !== null) {
+            message += $("#RegisterForm-LastName").val() == "" ? "<li>Please Enter First Name</li>" : "<li>Please Enter Valid First Name</li>";
+            $("#RegisterForm-FirstName")[0].setCustomValidity("Please fill out this field.");
+            validateAccountForm = false;
+            document.forms['RegisterForm'].reportValidity();
+        }
+        if (lastname == "" || $("#RegisterForm-LastName").val().match(/^\s+|\s+$/i) !== null) {
+            message += $("#RegisterForm-LastName").val() == "" ? "<li>Please Enter Last Name</li>" : "<li>Please Enter Valid Last Name</li>";
+            $("#RegisterForm-LastName")[0].setCustomValidity("Please fill out this field.");
+            validateAccountForm = false;
+            document.forms['RegisterForm'].reportValidity();
+        }
+        if ($("#RegisterForm-email").val().trim() == '') {
+            message += "<li>Please Enter an Email</li>";
+        } else if (!$("#RegisterForm-email").val().includes("@")) {
+            message += "<li>Please include an '@' in the email address</li>";
+        } else if (email_regex.test($("#RegisterForm-email").val()) == false) {
+            message += "<li>Please Enter Valid Email</li>";
+        }
+        if ($("#RegisterForm-password").val() == '') {
+            message += "<li>Please Enter Password</li>";
+        }
+        if (validateAccountForm && document.forms['RegisterForm'].checkValidity()) {
+
+            $(this).submit();
+        } else {
+            $("#jsErrorMessage .errors ul").html(message);
+            $("#jsErrorMessage").show();
+            // $("#jsErrorMessage").focus();
+            document.forms['RegisterForm'].reportValidity();
+        }
+    });
+
+    /* Registration Form Validation */
+    $("#BulkOrderForm-submit").click(function(e) {
+        e.preventDefault();
+        var validateBulkOrderForm = true;
+        var message = '';
+        $("#jsErrorMessage").hide();
+        var formid = "BulkOrderForm";
+        var skumessage = false;
+        var quantitymessage = false;
+        var focusElement;
+        $("#" + formid + " .product-block").each(function(index, element) {
+
+            $('input[type=text]', element)[0].setCustomValidity("");
+            $('.form-qty-row .qty-wrapper input.qty-input', element)[0].setCustomValidity("");
+            if ($('input[type=text]', element).val().trim() == "" || $('input[type=text]', element).val().match(/^\s+|\s+$/i) !== null) {
+                if (skumessage == false) {
+                    skumessage = true;
+                    message += "<li>Please Enter " + ($('input[type=text]', element).val() == '' ? '' : 'Valid ') + "SKU Or URL</li>";
+                    if (focusElement == undefined) { focusElement = $('input[type=text]', element); }
+                }
+                validateBulkOrderForm = false;
+
+                // $('html, body').animate({ scrollTop: $('input[type=text]', element).offset().top }, 500);
+                $('input[type=text]', element)[0].setCustomValidity("Please fill out this field.");
+            }
+            if (parseInt($('.form-qty-row .qty-wrapper input.qty-input', element).val()) < 10 || $('.form-qty-row .qty-wrapper input.qty-input', element).val().trim() == "") {
+                if (quantitymessage == false) {
+                    quantitymessage = true;
+                    message += "<li>Please Enter Minimum Order Quantity 10</li>";
+                    if (focusElement == undefined) { focusElement = $('.form-qty-row .qty-wrapper input.qty-input', element); }
+                }
+                validateBulkOrderForm = false;
+                $('.form-qty-row .qty-wrapper input.qty-input', element)[0].setCustomValidity("Please enter valid quantity.");
+            }
+        }, message);
+        $("input[name='contact[Name]']")[0].setCustomValidity("");
+        $("input[name='contact[email]']")[0].setCustomValidity("");
+        $("input[name='contact[address]']")[0].setCustomValidity("");
+
+        var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if ($("input[name='contact[Name]']").val().trim() == "" || $("input[name='contact[Name]']").val().match(/^\s+|\s+$/i) !== null) {
+            message += "<li>Please Enter " + ($("input[name='contact[Name]']").val() == '' ? '' : 'Valid ') + "Name</li>";
+            $("input[name='contact[Name]']")[0].setCustomValidity("Please fill out this field.");
+            validateBulkOrderForm = false;
+            document.forms[formid].reportValidity();
+        }
+
+        if ($("input[name='contact[email]']").val().trim() == '' || $("input[name='contact[email]']").val().match(/^\s+|\s+$/i) !== null) {
+            message += "<li>Please Enter " + ($("input[name='contact[email]']").val() == '' ? '' : 'Valid ') + "an Email</li>";
+            $("input[name='contact[email]']")[0].setCustomValidity("Please fill out this field.");
+        } else if (!$("input[name='contact[email]']").val().includes("@")) {
+            message += "<li>Please include an '@' in the email address</li>";
+            $("input[name='contact[email]']")[0].setCustomValidity(">Please include an '@' in the email address.");
+        } else if (email_regex.test($("input[name='contact[email]']").val()) == false) {
+            $("input[name='contact[email]']")[0].setCustomValidity("Please fill out valid email this field.");
+            message += "<li>Please Enter Valid Email</li>";
+        }
+        if ($("input[name='contact[address]']").val().trim() == '' || $("input[name='contact[address]']").val().match(/^\s+|\s+$/i) !== null) {
+            message += "<li>Please Enter Valid Shipping Address</li>";
+            $("input[name='contact[address]']")[0].setCustomValidity("Please fill out this field.");
+        }
+        if (validateBulkOrderForm && document.forms[formid].checkValidity()) {
+
+            $(this).submit();
+        } else {
+            if (focusElement != undefined) { $('html, body').animate({ scrollTop: focusElement.offset().top }); }
+            $("#jsErrorMessage .errors ul").html(message);
+            $("#jsErrorMessage").show();
+            document.forms[formid].reportValidity();
+        }
+    });
+    /* Open Send Message Popup when submitting the form on the contact page */
+    if (theme.requestPageType != 'captcha') {
+        if (localStorage.getItem("defaultOpenContactForm") == "2") {
+            localStorage.removeItem("defaultOpenContactForm");
+            $("#sendMessage").click();
+        }
+        if (localStorage.getItem("defaultOpenContactForm") == "1") {
+            localStorage.removeItem("defaultOpenContactForm");
+            $("#requestCallback").click();
+        }
+    }
+    /* Open Send Message Popup when submitting the form on the contact page */
+});
+
+/* Register Form Data Localstorage */
+function submitRegisterForm() {
+    localStorage.setItem("register_firstname", $("input[name='customer[first_name]']").val());
+    localStorage.setItem("register_lastname", $("input[name='customer[last_name]']").val());
+    localStorage.setItem("register_email", $("input[name='customer[email]']").val());
+}
+if (theme.requestPageType != 'captcha') {
+    if (localStorage.getItem("register_firstname") != undefined) {
+        if (theme.requestPageType == 'customers/register') {
+            $("input[name='customer[first_name]']").val(localStorage.getItem("register_firstname"));
+        }
+        localStorage.removeItem("register_firstname");
+    }
+    if (localStorage.getItem("register_lastname") != undefined) {
+        if (theme.requestPageType == 'customers/register') {
+            $("input[name='customer[last_name]']").val(localStorage.getItem("register_lastname"));
+        }
+        localStorage.removeItem("register_lastname");
+    }
+    if (localStorage.getItem("register_email") != undefined) {
+        /* if(theme.requestPageType=='customers/register') {
+            $("input[name='customer[email]']").val(localStorage.getItem("register_email"));
+        } */
+        localStorage.removeItem("register_email");
+    }
+}
+/* Register Form Data Localstorage */
+/* Login Form Validation */
+function validateLoginForm() {
+    var email = $("#CustomerEmail").val();
+    var password = $("#CustomerPassword").val();
+    var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var message = '';
+
+    $("#jsErrorMessage").hide();
+    if  (email  ==  null  ||  email  ==  "")  {
+        message += "<li>Please Enter an Email</li>";
+    } else {
+        if (!email.includes("@")) {
+            message += "<li>Please include an '@' in the email address</li>";
+        } else if (email_regex.test(email) == false) {
+            message += "<li>Please Enter Valid Email</li>";
+        }
+    }
+    if  (password  ==  null  ||  password  ==  "")  {
+        message += "<li>Please Enter Password</li>";
+    }
+    if (message == '') {
+        return true;
+    } else {
+        $("#jsErrorMessage .errors ul").html(message);
+        $("#jsErrorMessage").show();
+        $("#jsErrorMessage").focus();
+        return false;
+    }
+}
+/* Login Form Validation */
+/* Product page script start */
+if (theme.template == 'product') {
+    var container = document.getElementsByClassName('sticky-atc')[0];
+    var ajaxEnabled = true;
+    var productForm = container.querySelector('[data-sticky-product-form]');
+    var quantityInput = container.querySelector('[data-quantity-input]');
+    var cartRoutes = JSON.parse(
+        document.querySelector('[data-cart-routes]').innerHTML
+    );
+    var sectionId = ""; // product-template
+    var selectors = {
+        addToCart: '[data-add-to-cart]',
+        addToCartText: '[data-add-to-cart-text]',
+        cartCount: '[data-cart-count]',
+        cartCountBubble: '[data-cart-count-bubble]',
+        cartPopup: '[data-cart-popup]',
+        cartPopupCartQuantity: '[data-cart-popup-cart-quantity]',
+        cartPopupClose: '[data-cart-popup-close]',
+        cartPopupDismiss: '[data-cart-popup-dismiss]',
+        cartPopupImage: '[data-cart-popup-image]',
+        cartPopupImageWrapper: '[data-cart-popup-image-wrapper]',
+        cartPopupImagePlaceholder: '[data-image-loading-animation]',
+        cartPopupProductDetails: '[data-cart-popup-product-details]',
+        cartPopupQuantity: '[data-cart-popup-quantity]',
+        cartPopupQuantityLabel: '[data-cart-popup-quantity-label]',
+        cartPopupTitle: '[data-cart-popup-title]',
+        cartPopupWrapper: '[data-cart-popup-wrapper]',
+        loader: '[data-loader]',
+        loaderStatus: '[data-loader-status]',
+        quantity: '[data-quantity-input]',
+        SKU: '.variant-sku',
+        productStatus: '[data-product-status]',
+        originalSelectorId: '#ProductSelect-' + sectionId,
+        productForm: '[data-product-form]',
+        errorMessage: '[data-error-message]',
+        errorMessageWrapper: '[data-error-message-wrapper]',
+        imageZoomWrapper: '[data-image-zoom-wrapper]',
+        productMediaWrapper: '[data-product-single-media-wrapper]',
+        productThumbImages: '.product-single__thumbnail--' + sectionId,
+        productThumbs: '.product-single__thumbnails-' + sectionId,
+        productThumbListItem: '.product-single__thumbnails-item',
+        productThumbsWrapper: '.thumbnails-wrapper',
+        saleLabel: '.product-price__sale-label-' + sectionId,
+        singleOptionSelector: '.single-option-selector-' + sectionId,
+        shopifyPaymentButton: '.shopify-payment-button',
+        productMediaTypeVideo: '[data-product-media-type-video]',
+        productMediaTypeModel: '[data-product-media-type-model]',
+        priceContainer: '[data-price]',
+        regularPrice: '[data-regular-price]',
+        salePrice: '[data-sale-price]',
+        unitPrice: '[data-unit-price]',
+        unitPriceBaseUnit: '[data-unit-price-base-unit]',
+        productPolicies: '[data-product-policies]',
+        storeAvailabilityContainer: '[data-store-availability-container]'
+    };
+
+    var quantityInput = container.querySelector(selectors.quantity);
+    var addToCart = container.querySelector(selectors.addToCart);
+    var addToCartText = addToCart.querySelector(
+        selectors.addToCartText
+    );
+    var loader = addToCart.querySelector(selectors.loader);
+    var loaderStatus = container.querySelector(selectors.loaderStatus);
+    var shopifyPaymentButton = container.querySelector(
+        selectors.shopifyPaymentButton
+    );
+    var priceContainer = container.querySelector(
+        selectors.priceContainer
+    );
+    var errorMessageWrapper = container.querySelector(
+        selectors.errorMessageWrapper
+    );
+    var errorMessageContainer = container.querySelector(
+        selectors.errorMessage
+    );
+    var classes = {
+        cartPopupWrapperHidden: 'cart-popup-wrapper--hidden',
+        hidden: 'hide',
+        visibilityHidden: 'visibility-hidden',
+        inputError: 'input--error',
+        jsZoomEnabled: 'js-zoom-enabled',
+        productOnSale: 'price--on-sale',
+        productUnitAvailable: 'price--unit-available',
+        productUnavailable: 'price--unavailable',
+        productSoldOut: 'price--sold-out',
+        cartImage: 'cart-popup-item__image',
+        productFormErrorMessageWrapperHidden: 'product-form__error-message-wrapper--hidden',
+        activeClass: 'active-thumb',
+        variantSoldOut: 'product-form--variant-sold-out'
+    };
+    productForm.addEventListener(
+        'submit',
+        function(evt) {
+
+            evt.preventDefault();
+            var previouslyFocusedElement = document.activeElement;
+            var isInvalidQuantity = !!quantityInput && quantityInput.value <= 0;
+            if (isInvalidQuantity) {
+                _showErrorMessage(theme.strings.quantityMinimumMessage);
+                return;
+            }
+            if (addToCart.getAttribute('aria-disabled') === 'true') {
+                evt.preventDefault();
+                return;
+            }
+            if (!isInvalidQuantity && ajaxEnabled) {
+                // disable the addToCart and dynamic checkout button while
+                // request/cart popup is loading and handle loading state
+                _handleButtonLoadingState(true);
+                _addItemToCart(this.productForm);
+                return;
+            }
+            //  _addItemToCart(productForm);
+        }.bind(this)
+    );
+
+    function _addItemToCart(form) {
+        // var self = this;
+        var previouslyFocusedElement = document.activeElement;
+        fetch(cartRoutes.cartAddUrl + '.js', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: theme.Helpers.serialize(form)
+            })
+            .then(function(response) {
+                // window.location.href = "/cart";
+                return response.json();
+            })
+            .then(function(json) {
+                if (json.status && json.status !== 200) {
+                    var error = new Error(json.description);
+                    error.isFromServer = true;
+                    throw error;
+                }
+                // self._hideErrorMessage();
+                window.location.href = "/cart";
+                // self._setupCartPopup(json);
+            })
+            .catch(function(error) {
+                previouslyFocusedElement.focus();
+                _showErrorMessage(
+                    error.isFromServer && error.message.length ?
+                    error.message :
+                    theme.strings.cartError
+                );
+                self._handleButtonLoadingState(false);
+                // eslint-disable-next-line no-console
+                console.log(error);
+            });
+    };
+
+    function _handleButtonLoadingState(isLoading) {
+        if (isLoading) {
+            addToCart.setAttribute('aria-disabled', true);
+            addToCartText.classList.add(this.classes.hidden);
+            loader.classList.remove(this.classes.hidden);
+
+            if (shopifyPaymentButton) {
+                shopifyPaymentButton.setAttribute('disabled', true);
+            }
+
+            // loaderStatus.setAttribute('aria-hidden', false);
+        } else {
+            addToCart.removeAttribute('aria-disabled');
+            addToCartText.classList.remove(this.classes.hidden);
+            loader.classList.add(this.classes.hidden);
+
+            if (shopifyPaymentButton) {
+                shopifyPaymentButton.removeAttribute('disabled');
+            }
+
+            // loaderStatus.setAttribute('aria-hidden', true);
+        }
+    };
+
+    function _showErrorMessage(errorMessage) {
+        errorMessageContainer.innerHTML = errorMessage;
+        if (quantityInput) {
+            quantityInput.classList.add(classes.inputError);
+        }
+        errorMessageWrapper.classList.remove(
+            classes.productFormErrorMessageWrapperHidden
+        );
+        $(".product-form__input.product-form__input--quantity").addClass("qty-input input--error");
+        $(".product-form__error-message-wrapper.product-form__error-message-wrapper--hidden .product-form__error-message").html(errorMessage);
+        $(".product-form__error-message-wrapper.product-form__error-message-wrapper--hidden").removeClass("product-form__error-message-wrapper--hidden");
+        errorMessageWrapper.setAttribute('aria-hidden', true);
+        errorMessageWrapper.removeAttribute('aria-hidden');
+    };
+
+    function _hideErrorMessage() {
+        errorMessageWrapper.classList.add(
+            classes.productFormErrorMessageWrapperHidden
+        );
+
+        if (quantityInput) {
+            quantityInput.classList.remove(classes.inputError);
+        }
+    };
+
+    $(window).trigger('resize');
+    var productMainSlider;
+    $(document).ready(function() {
+
+        /* In body remove scroll when zbox open on product page */
+        $(document).on("click", "#zbox-overlay, .zbox-button.close", function() {
+            $('body').removeClass('zbox-open');
+        });
+        $('.zb').on("click", function() {
+            $('body').addClass('zbox-open');
+        });
+        /* In body remove scroll when zbox open on product page */
+
+        /* Update top and bottom quantity textboxes */
+        $(".qty-wrapper input.qty-input").change(function() {
+            $(".qty-wrapper input.qty-input").val($(this).val());
+        });
+        /* Update top and bottom quantity textboxes */
+
+        /* Product Review Hide/Show Script */
+        $('.more_review_btn').on("click", function() {
+            $('.faqpage .metafiled-review .content review').css('display', 'block');
+            $(this).hide();
+            $('.less_review_btn').show();
+
+        });
+
+        $('.less_review_btn').on("click", function() {
+            $('.faqpage .metafiled-review .content review').css('display', 'none');
+            $('.faqpage .metafiled-review .content review:nth-child(1)').css('display', 'block');
+            $('.faqpage .metafiled-review .content review:nth-child(2)').css('display', 'block');
+            $('.faqpage .metafiled-review .content review:nth-child(3)').css('display', 'block');
+            $('.faqpage .metafiled-review .content review review.rvwtitle').css('display', 'block');
+            $('.faqpage .metafiled-review .content review review.rvwcontent').css('display', 'block');
+            $('.faqpage .metafiled-review .content review review.rvw-rating').css('display', 'block');
+            $(this).hide();
+            if ($('.faqpage .metafiled-review .content > review').length > 3) {
+                $('.more_review_btn').show();
+            }
+        });
+        /* Product Review Hide/Show Script */
+        /* Display Product Review  */
+        $(".metafiled-review .content review").each(function() {
+            $(this).find('.rvw-rating').each(function() {
+                var current = $(this);
+                var reviewvalue = current.text();
+                if (reviewvalue == 0 || reviewvalue == '') {
+                    $(current).append(
+                        '<img src="'+star_default+'" alt="" />');
+                }
+                if (reviewvalue >= 0.1 && reviewvalue <= 0.4) {
+                    $(current).append(
+                        '<img src="'+star_default+' alt="" />')
+                }
+                if (reviewvalue >= 0.5 && reviewvalue <= 0.9) {
+                    $(current).append('<img src="'+star_1_half+'" />');
+                }
+                if (reviewvalue >= 1.0 && reviewvalue <= 1.4) {
+                    $(current).append('<img src="'+star_1_full+'"  />');
+                }
+                if (reviewvalue >= 1.5 && reviewvalue <= 1.9) {
+                    $(current).append('<img src="'+star_2_half+'"/>');
+                }
+                if (reviewvalue >= 2.0 && reviewvalue <= 2.4) {
+                    $(current).append('<img src="'+star_2_full+'"/>');
+                }
+                if (reviewvalue >= 2.5 && reviewvalue <= 2.9) {
+                    $(current).append('<img src="'+star_3_half+'"/>');
+                }
+                if (reviewvalue >= 3.0 && reviewvalue <= 3.4) {
+                    $(current).append('<img src="'+star_3_full+'"/>');
+                }
+                if (reviewvalue >= 3.5 && reviewvalue <= 3.9) {
+                    $(current).append('<img src="'+star_4_half+'"/>');
+                }
+                if (reviewvalue >= 4.0 && reviewvalue <= 4.4) {
+                    $(current).append('<img src="'+star_4_full+'"/>');
+                }
+                if (reviewvalue >= 4.5 && reviewvalue <= 4.9) {
+                    $(current).append('<img src="'+star_5_half+'"/>');
+                }
+                if (reviewvalue >= 5.0) {
+                    $(current).append('<img src="'+star_5_full+'"/>');
+                }
+
+
+            });
+        });
+        $('.less_review_btn').click();
+        /* Display Product Review  */
+        /* Product main horizontal slider  */
+        $(".main-product-slider").slick({
+            dots: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // adaptiveHeight: true,
+
+            prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17 9H5.414l3.293-3.293a.999.999 0 10-1.414-1.414l-5 5a.999.999 0 000 1.414l5 5a.997.997 0 001.414 0 .999.999 0 000-1.414L5.414 11H17a1 1 0 100-2z" fill="#5C5F62"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 9.293l-5-5a.999.999 0 10-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a.999.999 0 101.414 1.414l5-5a.999.999 0 000-1.414z" fill="#5C5F62"/></svg></button>',
+            asNavFor: '.vertical-center-4',
+            responsive: [{
+                breakpoint: 749,
+                settings: {
+                    adaptiveHeight: false,
+                }
+            }]
+        });
+        /* Product main horizontal slider  */
+        /* Product vartical thumbnail slider  */
+        $(".vertical-center-4").slick({
+            dots: false,
+            vertical: true,
+            adaptiveHeight: true,
+            centerMode: false,
+            slidesToShow: 5,
+            focusOnSelect: true,
+            infinite: false,
+            touchMove: true,
+            swipeToSlide: true,
+            swipe: true,
+            slidesToScroll: 1,
+
+            asNavFor: '.main-product-slider',
+            responsive: [{
+                breakpoint: 749,
+                settings: {
+                    horizontalSwiping: true,
+                    centerMode: false,
+                    vertical: false,
+                    slidesToShow: 4,
+                    infinite: false,
+                    touchMove: true,
+                    swipeToSlide: true,
+                    swipe: true,
+                    slidesToScroll: 1,
+                    focusOnSelect: true,
+                }
+            }]
+        });
+        /* Product vartical thumbnail slider  */
+        /* Set height of Horizontal main slider  */
+        setTimeout(function() {
+            /// $('.main-product-slider .slick-list').css('height', $('.main-product-slider .slick-track').height());
+        }, 2000);
+        /* Set height of Horizontal main slider  */
+    });
+
+}
+/* Product page script end */
+/* Validate add address form  */
+async function validateAddAddress() {
+    var validate = true;
+    $("#AddressPhoneNew")[0].setCustomValidity("");
+    var message = '';
+    $("#address_form_new #jsErrorMessage").hide();
+    $("#address_form_new .grid__item.medium-up--one-half").each(function(index, element) {
+        if ($('input', element).length > 0) {
+          	
+            $('input', element)[0].setCustomValidity("");
+            if (($('input', element).val().trim() == '' || $('input', element).val().match(/^\s+|\s+$/i) !== null) && $('input', element).attr('required') !== undefined) {
+              	
+                message += $('input', element).val() == "" ? "<li>Please Enter " + $('label', element).text() + "</li>" : "<li>Please Enter Valid " + $('label', element).text() + "</li>";
+              
+                $('input', element)[0].setCustomValidity("Please fill out this field.");
+            }
+            if ($('input', element).attr("name") == "address[phone]" && $('input', element).val().trim() != '') {
+                if (($('input', element).val().length < 6) || ($('input', element).val().length > 14)) {
+                    message += "<li>Please Enter phone number between 6 to 14 digit</li>";
+                    $('input', element)[0].setCustomValidity("Please Enter phone number between 6 to 14 digit");
+                }
+         
+          
+          }
+          if ($('input', element).attr("name") == "address[zip]" && $('input', element).val().trim() != '') {
+            if(($('input', element).val().length) < 6 || ($('input', element).val().length) > 8){
+              message += "<li>Please Enter Zipcode between 6 to 8 digit.</li>";
+              $('input', element)[0].setCustomValidity("Enter pincode between 6 to 8 digit.");
+            }
+          }
+        } else if ($('select', element).length > 0) {
+            if ($('select', element).val().trim() == '' && $('select', element).attr('required') !== undefined) {
+                message += "<li>Please Enter " + $('label', element).text() + "</li>";
+                $('select', element)[0].setCustomValidity("Please fill out this field.");
+            }
+        }
+    });
+    if (message != '') {
+        $("#address_form_new #jsErrorMessage .errors ul").html(message);
+        $("#address_form_new #jsErrorMessage").show();
+    }
+    document.forms['address_form_new'].reportValidity();
+    if (document.forms['address_form_new'].checkValidity()) {
+
+        if (!(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test($("#AddressPhoneNew").val()))) {
+            validate = false;
+            $("#AddressPhoneNew")[0].setCustomValidity("Enter valid phone number");
+            $("#AddressPhoneNew").siblings(".custom-error-message").show();
+            $("#AddressPhoneNew")[0].reportValidity();
+            document.forms['address_form_new'].reportValidity();
+        } else {
+            $("#AddressPhoneNew").siblings(".custom-error-message").hide();
+        }
+
+        if (validate) {
+            $("#address_form_new").submit();
+        }
+    }
+}
+
+
+$(".qty-input").keydown(function () {
+  if(!$(this).hasClass('qty-bulk-order-input')){
+    // Save old value.
+    if (!$(this).val() || (parseInt($(this).val()) <= 500 && parseInt($(this).val()) >= 1)){
+      
+      $(this).data("old", $(this).val());
+      setQuantityPrice();
+    }
+  }
+  
+});
+$(".qty-input").keyup(function (e) {
+  if(!$(this).hasClass('qty-bulk-order-input')){
+    // Check correct, else revert back to old value.
+    if (!$(this).val() || (parseInt($(this).val()) <= 500 && parseInt($(this).val()) >= 1)){
+      
+      setQuantityPrice();
+    }else{
+      
+      $(this).val($(this).data("old"));
+      $(this).parents(".cart__qty").siblings(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+      $(this).parents(".cart__qty").siblings(".quantity-update-error-message").removeClass('hide');
+    }
+  }
+    
+});
+
+
+$(document).ready(function(){
+
+  var isMobile = window.matchMedia("(max-width: 767px)").matches;
+  if(isMobile){
+    $("input[type=custom_input]").each(function(){
+      	$(this).attr('type','number');
+    });
+  }
+  $("input[type=custom_input]").keypress(function(e){
+    var keyCode = e.which;
+    if ( (keyCode != 8 || keyCode ==32 ) && (keyCode < 48 || keyCode > 57) && (keyCode  != 43)) { 
+      return false;
+    }
+  });
+  
+  $("input[type=custom_input]").on('input', function() {
+    $(this).val($(this).val().replace(/[^a-z0-9]/gi, ''));
+  });
+  
+  $("input[type=custom_input]").on('input', function(e) {
+    var keyCode = e.which;
+    if ( (keyCode != 8 || keyCode == 32 ) && (keyCode < 48 || keyCode > 57) && (keyCode  != 43)) { 
+      return false;
+    }
+  });
+
+});
+/* Validate add address form  */
+/* Validate edit address form  */
+async function validateEditAddress(formid) {
+
+    $("#AddressPhone_" + formid)[0].setCustomValidity("");
+    var message = '';
+    $("form#" + formid + " .form-message--error").hide();
+    $("form#" + formid + " .grid__item.medium-up--one-half").each(function(index, element) {
+        if ($('input', element).length > 0) {
+          $('input', element)[0].setCustomValidity("");
+          if (($('input', element).val().trim() == '' || $('input', element).val().match(/^\s+|\s+$/i) !== null) && $('input', element).attr('required') !== undefined) {
+            message += $('input', element).val() == "" ? "<li>Please Enter " + $('label', element).text() + "</li>" : "<li>Please Enter Valid " + $('label', element).text() + "</li>";
+            $('input', element)[0].setCustomValidity("Please fill out this field.");
+          }
+          if ($('input', element).attr("name") == "address[phone]" && $('input', element).val().trim() != '') {
+            if (($('input', element).val().length < 6) || ($('input', element).val().length > 14)) {
+//               message += "<li>Please Enter valid phone number</li>";
+              message += "<li>Please Enter phone number between 6 to 14 digit.</li>";
+              $('input', element)[0].setCustomValidity("Please Enter phone number between 6 to 14 digit.");
+            }
+          }
+          if ($('input', element).attr("name") == "address[zip]" && $('input', element).val().trim() != '') {
+            if(($('input', element).val().length) < 6 || ($('input', element).val().length) > 8){
+              message += "<li>Please Enter Zipcode between 6 to 8 digit.</li>";
+              $('input', element)[0].setCustomValidity("Enter pincode between 6 to 8 digit.");
+            }
+          }
+        } else if ($('select', element).length > 0) {
+          if ($('select', element).val().trim() == '' && $('select', element).attr('required') !== undefined) {
+            message += "<li>Please Enter " + $('label', element).text() + "</li>";
+            $('select', element)[0].setCustomValidity("Please fill out this field.");
+          }
+        }
+    });
+    if (message != '') {
+        $("form#" + formid + " .form-message--error .errors ul").html(message);
+        $("form#" + formid + " .form-message--error").show();
+    }
+    document.forms[formid].reportValidity();
+    var validateEditAddress = true;
+    if (document.forms[formid].checkValidity()) {
+
+        if (!(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test($("#AddressPhone_" + formid).val()))) {
+            validateEditAddress = false;
+            $("#AddressPhone_" + formid)[0].setCustomValidity("Enter valid phone number");
+            $("#AddressPhone_" + formid).siblings(".custom-error-message").show();
+            $("#AddressPhone_" + formid)[0].reportValidity();
+            document.forms[formid].reportValidity();
+        } else {
+            $("#AddressPhone_" + formid).siblings(".custom-error-message").hide();
+        }
+        if (validateEditAddress == true) {
+            $("form#" + formid).submit();
+        }
+    }
+
+}
+/* Validate edit address form  */
+
+/* Register page set localstorage  */
+if (theme.requestPageType == 'customers/register') {
+    localStorage.setItem("previousPage", "register");
+}
+/* Register page set localstorage  */
+/* Hide the sort by dropdown on mouse out on collection page */
+
+$("nav.HeaderNav").mouseover(function() {
+    $(".filters-toolbar__input-wrapper.select-group select[name=sort_by]").blur();
+});
+/* Hide the sort by dropdown on mouse out on collection page */
+/* Form error message Query string remove from url */
+var url = window.location.href;
+var urlSplitArray = url.split('?');
+if (urlSplitArray.length > 1) {
+    var hashes = urlSplitArray[1].split('&');
+    var replaceQueryString = false;
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        if (hash[0] == 'form_type' || hash[0] == 'contact_posted' || hash[0] == 'customer_posted') {
+            replaceQueryString = true;
+        }
+    }
+    if (replaceQueryString == true) {
+        window.history.replaceState({}, document.title, url.split('?')[0]);
+    }
+}
+/* Form error message Query string remove from url */
+/* Remove button double click ignore on cart page */
+$('a[data-cart-remove]').click(function() {
+    if ($(this).hasClass('clicked')) return false;
+    else {
+        $(this).addClass('clicked');
+        return true;
+    }
+});
+/* Remove button double click ignore on cart page */
+/* Forgot password email address validation */
+$("#RecoverPasswordForm input[type=submit]").click(function(e) {
+    e.preventDefault();
+    var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ($("#RecoverEmail").val().trim() == '') {
+        $('#RecoverEmail').addClass('input--error');
+        $("#RecoverEmail-email-error span").html("Please enter an email address");
+        $("#RecoverEmail-email-error").show();
+    } else if (email_regex.test($("#RecoverEmail").val()) == false) {
+        $('#RecoverEmail').addClass('input--error');
+        $("#RecoverEmail-email-error span").html("Please enter valid email address");
+        $("#RecoverEmail-email-error").show();
+    } else {
+        $(this).submit();
+    }
+});
+$("#ContactForm input[type=submit]").click(function(e) {
+    e.preventDefault();
+    var message = '';
+    var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    $("#ContactForm #ContactForm-message.form-message--error").hide();
+
+    $("#ContactForm.contact-form input").each(function(index, element) {
+        $(element)[0].setCustomValidity("");
+        if ($(element).attr('type') == "text" && $(element).attr('required') !== undefined) {
+            if ($(element).attr('id') == 'ContactForm-order-id') {
+                var orderid_Prefix = new RegExp('^(' + $(element).attr('data-prefix') + ')[0-9]+$', 'i');
+              
+                if ($(element).val().trim() == '' || (!(orderid_Prefix.test($(element).val())))) {
+                    message += "<li>Please Enter" + ($(element).val() == '' ? '' : ' Valid') + " " + $(element).attr('data-title') + "</li>";
+                    $(element)[0].setCustomValidity("Please fill out this field.");
+                }
+            } else {
+                if ($(element).val().trim() == '' || $(element).val().match(/^\s+|\s+$/i) !== null) {
+                    message += "<li>Please Enter" + ($(element).val() == '' ? '' : ' Valid') + " " + $(element).attr('data-title') + "</li>";
+                    $(element)[0].setCustomValidity("Please fill out this field.");
+                }
+            }
+        }
+        if ($(element).attr('type') == "email" && $(element).attr('required') !== undefined) {
+            if (email_regex.test($(element).val()) == false) {
+                message += "<li>Please Enter Valid " + $(element).attr('data-title') + "</li>";
+                $(element)[0].setCustomValidity("Please fill out this field.");
+            }
+        }
+    }, message);
+    $("#ContactForm.contact-form textarea").each(function(index, element) {
+        $(element)[0].setCustomValidity("");
+        if ($(element).attr('required') !== undefined) {
+            if ($(element).val().trim() == '' || $(element).val().match(/^\s+|\s+$/i) !== null) {
+                message += "<li>Please Enter" + ($(element).val() == '' ? '' : ' Valid') + " " + $(element).attr('data-title') + "</li>";
+                $(element)[0].setCustomValidity("Please fill out this field.");
+            }
+        }
+    }, message);
+    if (message != '') {
+        $("#ContactForm .form-message--error .errors ul").html(message);
+        $("#ContactForm #ContactForm-message.form-message--error").show();
+        document.forms["ContactForm"].reportValidity();
+    } else {
+        localStorage.setItem("defaultOpenContactForm", "2");
+        $(this).submit();
+    }
+});
+$("#ContactForm-2 input[type=submit]").click(function(e) {
+    e.preventDefault();
+    var message = '';
+    var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    $("#ContactForm-2 #ContactForm-2-message.form-message--error").hide();
+
+    $("#ContactForm-2.contact-form input").each(function(index, element) {
+        $(element)[0].setCustomValidity("");
+        if ( ($(element).attr('type') == "text" || $(element).attr('type') == "custom_input" || $(element).attr('type') == "number" ) && $(element).attr('required') !== undefined) {
+          
+            if ($(element).attr('data-title') == 'Phone') {
+              	
+                if ($(element).val().trim() == '' || (!(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test($(element).val())))) {
+                    message += "<li>Please Enter" + ($(element).val() == '' ? '' : ' Valid') + " " + $(element).attr('data-title') + "</li>";
+                    $(element)[0].setCustomValidity("Please fill out this field.");
+                } else {
+                    if ($(element).val().length > 14 || $(element).val().length < 8) {
+                        message += "<li>Enter phone number between 8 to 14 digit.</li>";
+                        $(element)[0].setCustomValidity("Enter phone number between 8 to 14 digit.");
+                    }
+                }
+            } else {
+
+                if ($(element).val().trim() == '' || $(element).val().match(/^\s+|\s+$/i) !== null) {
+                    message += "<li>Please Enter" + ($(element).val() == '' ? '' : ' Valid') + " " + $(element).attr('data-title') + "</li>";
+                    $(element)[0].setCustomValidity("Please fill out this field.");
+                }
+            }
+        }
+        if ($(element).attr('type') == "email" && $(element).attr('required') !== undefined) {
+            if (email_regex.test($(element).val()) == false) {
+                message += "<li>Please Enter Valid " + $(element).attr('data-title') + "</li>";
+                $(element)[0].setCustomValidity("Please fill out this field.");
+            }
+        }
+    }, message);
+
+    if (message != '') {
+        $("#ContactForm-2 .form-message--error .errors ul").html(message);
+        $("#ContactForm-2 #ContactForm-2-message.form-message--error").show();
+        document.forms["ContactForm-2"].reportValidity();
+    } else {
+        localStorage.setItem("defaultOpenContactForm", "1");
+        $(this).submit();
+    }
+});
+/* Forgot password email address validation */
+/* Hide/show newletter form error message  */
+if (theme.template == "page.about") {
+    if (localStorage.getItem('about-form-submit') == "true") {
+        $("#ContactFooter .form-message").hide();
+        $("#ContactFooter input.input--error").val("").removeClass("input--error");
+    }
+} else if (theme.template == "page.contact") {
+
+    if (localStorage.getItem('defaultOpenContactForm') == "1") {
+        $("#ContactForm .form-message, #ContactForm-email-error").hide();
+        $("#ContactForm input.input--error").val("").removeClass("input--error");
+        $("#ContactFooter .form-message").hide();
+        $("#ContactFooter input.input--error").val("").removeClass("input--error");
+    } else if (localStorage.getItem('defaultOpenContactForm') == "2") {
+        $("#ContactForm-2 .form-message").hide();
+        $("#ContactForm-2 input.input--error").val("").removeClass("input--error");
+        $("#ContactFooter .form-message").hide();
+        $("#ContactFooter input.input--error").val("").removeClass("input--error");
+    } else {
+        if (localStorage.getItem('about-form-submit') == "false") {
+            $("#ContactForm-2 .form-message").hide();
+            $("#ContactForm-2 input.input--error").val("").removeClass("input--error");
+            $("#ContactForm .form-message, #ContactForm-email-error").hide();
+            $("#ContactForm input.input--error").val("").removeClass("input--error");
+        }
+    }
+}
+/* Hide/show newletter form error message  */
+/* Hide/show password on password reset page */
+$(document).on('change', '#show_password', function() {
+    if ($(this).is(':checked')) {
+        $("#ResetPassword").attr("type", "text");
+        $("#PasswordConfirmation").attr("type", "text");
+    } else {
+        $("#ResetPassword").attr("type", "password");
+        $("#PasswordConfirmation").attr("type", "password");
+    }
+});
+/* Hide/show password on password reset page */
+
+$(document).on('change', '.qty-bulk-order-input', function() {
+    if ($(this).val() < 11) {
+        $(this).val(10);
+    }
+});
+
+
+setQuantityPrice = function(qty) { 
+  
+    if (qty == '' || qty == 0) {
+      qty = 1;
+    }
+  
+  if(typeof(qty) == 'undefined'){
+    qty = $("[name=quantity]").val();
+  }
+
+    var getprice = $('.price__sale .price-item--sale').attr('rel');
+    var getComparePrice = $('.price__sale .compare-price').attr('rel'); 
+
+    qty = parseInt(qty);
+    getprice = parseInt(getprice) * qty;
+    getComparePrice = parseInt(getComparePrice) * qty;
+    var getpriceFormat = Shopify.formatMoney(getprice, theme.moneyFormat);
+    var getComparePriceFormat = Shopify.formatMoney(getComparePrice, theme.moneyFormat);
+    $('.product-form__mobile-price').html(" - " + getpriceFormat);
+    $('.price__sale .price-item--sale').html(getpriceFormat);
+    $('.price__sale .compare-price').html(getComparePriceFormat);
+    var price_diff = getComparePrice - getprice;
+    var saving_percent = (getComparePrice == 0) ? 0 : Math.round(price_diff * 100 / getComparePrice);
+    var discountPriceFormat = Shopify.formatMoney(price_diff, theme.moneyFormat);
+    $('.product__price .price-saving').html(" Save " + saving_percent + "% (" + discountPriceFormat + ")");
+};
+
+
+$(".product-form__qty input[data-quantity-input]").change(function() {
+    setQuantityPrice($(this).val());
+});
+$(".cart__qty input[data-quantity-input]").change(function() {
+    if ($(this).val() == '') {
+        $(this).parents(".cart__qty").siblings(".quantity-update-error-message").addClass('hide');
+    }
+});
+
+
+$("input[data-quantity-input]").bind("keypress", function(event) {
+  
+  val = this.value + '' + event.key;
+    
+    if ($(".product-form__error-message-wrapper:not(.quantity-update-error-message)").length > 0) {
+        $(".product-form__error-message-wrapper:not(.quantity-update-error-message)").addClass('product-form__error-message-wrapper--hidden');
+        $("input[data-quantity-input]").removeClass('input--error');
+    }
+    if (parseInt(val) >= 500) {
+            	
+        if (theme.template == 'product') {
+          	
+            if ($(this).parents(".product-form__controls-group").siblings(".quantity-update-error-message").length > 0) {
+                $(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                $(".quantity-update-error-message").removeClass('hide');
+            } else {
+                $(".dodat").siblings(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                $(".dodat").siblings(".quantity-update-error-message").removeClass('hide');
+                $(".dodat").children(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                $(".dodat").children(".quantity-update-error-message").removeClass('hide');
+            }
+          return false;
+        } else {
+		
+          if (val.length > 3) {
+            val = val.replace(/^0+/, '');
+            $(this).val(val); 
+          }
+          
+          
+          //if(parseInt(val) >= 500){
+            $(this).parents(".cart__qty").siblings(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+            $(this).parents(".cart__qty").siblings(".quantity-update-error-message").removeClass('hide');
+          //}
+        }
+       // 
+    } else if (val.length > 3) {
+      
+        if (theme.template == 'product') {
+          
+//             if ($(this).parents(".product-form__controls-group").siblings(".quantity-update-error-message").length > 0) {
+//                 $(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//                 $(".quantity-update-error-message").removeClass('hide');
+//             } else {
+//                 $(".dodat").siblings(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//                 $(".dodat").siblings(".quantity-update-error-message").removeClass('hide');
+//                 $(".dodat").children(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//                 $(".dodat").children(".quantity-update-error-message").removeClass('hide');
+//             }
+
+        } else {
+            $(this).parents(".cart__qty").siblings(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+            $(this).parents(".cart__qty").siblings(".quantity-update-error-message").removeClass('hide');
+          event.preventDefault();
+          return false;
+        }
+        return false;
+    }  else {
+        if (theme.template == 'product') {
+            $(".quantity-update-error-message").addClass('hide');
+        } else {
+            $(this).parents(".cart__qty").siblings(".quantity-update-error-message").addClass('hide');
+        }
+    }
+//   val = val.replace(/^0+/, '');
+
+//   	$(this).val(val);
+});
+
+function addToCartProduct(variantId,event){
+    
+    var QtyValue = parseInt($('.qty-input').val());
+    if(QtyValue <= 0 && QtyValue >= 500){
+      
+      event.preventDefault();
+      return false;
+    }
+}
+
+function CheckNumerick(event, obj) {
+     	
+  var _key = (window.Event) ? event.which : event.keyCode;
+  
+  if (event.shiftKey == false && (_key >= 48 && _key <= 57) || (_key >= 96 && _key <= 105) || (_key == 8 || _key == 46 || _key == 38 || _key == 40 || _key == 37 || _key == 39 || _key == 17)){
+    if (_key == 8 || _key == 46) {
+        if (theme.template == 'product') {
+            $(".quantity-update-error-message").addClass('hide');
+        } else {
+            $(obj).parents(".qty-wrapper").siblings(".quantity-update-error-message").addClass('hide');
+        }
+    } else if (_key == 38) {
+        if (obj.value > 500) {
+            if (theme.template == 'product') {
+              
+                if ($(obj).parents(".product-form__controls-group").siblings(".quantity-update-error-message").length > 0) {
+                    $(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                    $(".quantity-update-error-message").removeClass('hide');
+                } else {
+                    $(".dodat").siblings(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                    $(".dodat").siblings(".quantity-update-error-message").removeClass('hide');
+                    $(".dodat").children(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+                    $(".dodat").children(".quantity-update-error-message").removeClass('hide');
+                }
+            } else {
+              
+             
+              	
+                $(obj).parents(".cart__qty").siblings(".quantity-update-error-message .product-form__error-message").text(qtyErrorMessage);
+                $(obj).parents(".cart__qty").siblings(".quantity-update-error-message").removeClass('hide');
+            }
+        }
+    }
+  }else{
+  	event.preventDefault();
+  }
+
+}
+
+function checkQuantityInput(obj,event) {
+   
+  if(obj.value == 0){
+    obj.value = 1;
+  }
+  var maxnum = 500;
+  if (theme.template == 'cart') {
+    if (obj.value == '') {
+      var line_item_id = obj.getAttribute('data-quantity-item');
+      window.location.href = '/cart/change?line=' + line_item_id + '&quantity=0';
+    }
+  } else {
+     
+    if (parseInt(obj.value) > 500) {
+       
+      if ($(obj).parents(".product-form__controls-group").siblings(".quantity-update-error-message").length > 0) {
+        if($(".quantity-update-error-message").hasClass('hide')){
+          $(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+          $(".quantity-update-error-message").removeClass('hide');
+        }
+        
+      } else {    	
+        $(".dodat").siblings(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+        $(".dodat").siblings(".quantity-update-error-message").removeClass('hide');
+        $(".dodat").children(".quantity-update-error-message").children(".product-form__error-message").text(qtyErrorMessage);
+        $(".dodat").children(".quantity-update-error-message").removeClass('hide');
+      }      
+      return false;
+       // 
+    }else if ((obj.value).length > 3) {
+      
+//       if ($(obj).parents(".product-form__controls-group").siblings(".quantity-update-error-message").length > 0) {
+//         $(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//         $(".quantity-update-error-message").removeClass('hide');
+//       } else {
+//         $(".dodat").siblings(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//         $(".dodat").siblings(".quantity-update-error-message").removeClass('hide');
+//         $(".dodat").children(".quantity-update-error-message").children(".product-form__error-message").text("You can't add more than 3 characters values.");
+//         $(".dodat").children(".quantity-update-error-message").removeClass('hide');
+//       }
+     
+      var inputValue = obj.value;
+      inputValue= inputValue.replace(/^0+/, '');
+      
+      obj.value = inputValue;
+//       event.preventDefault();
+//       return false;
+      
+    } else {
+      $(".quantity-update-error-message").addClass('hide');
+    }
+   
+    setQuantityPrice(obj.value);
+    $(obj).trigger('change');
+
+  }
+  setTimeout(function(){
+    if(obj.value <= 500){
+      $('#cart_page_form').submit();
+    }else{
+      return false;
+    }
+    
+  },1000);
+	
+  if (obj.value <= maxnum) {
+    if (theme.template == 'product') {
+      $(".quantity-update-error-message").addClass('hide');
+    } else {
+      $(obj).parents(".cart__qty").siblings(".quantity-update-error-message").addClass('hide');
+    }
+  }
+
+}
+function validatePincode(object,event){
+  var keyCode = event.which;
+  
+  var pincode = object.value;
+  pincode = pincode.replace(/[^0-9]+/g, "-");
+  
+  if(pincode.length >= 8){
+    if(keyCode != 8){
+      event.preventDefault();
+      return false;
+    }
+
+  }
+  
+  
+  
+}
+
+function validateMobileNumber(object,event){
+  var keyCode = event.which;
+  
+  var pincode = object.value;
+  if(pincode.length >= 14){
+    if(keyCode != 8){
+      event.preventDefault();
+      return false;
+    }
+    
+  }
+} 
+$(document).ready(function(e){
+  if(theme.template == 'customers/addresses'){
+    var queries = {};
+    $.each(document.location.search.substr(1).split('&'),function(c,q){
+      if(q != ''){
+        var i = q.split('=');
+        queries[i[0].toString()] = i[1].toString();
+      }
+      
+    });
+    var pageNumber = queries.page
+    var redirectUrl = 'account/addresses';
+    if(queries.page){
+      redirectUrl = redirectUrl + "?page="+pageNumber;
+    }
+    
+    $('#return_to_values').val(redirectUrl);
+  }
+
+ 
+  
+});
+ 
