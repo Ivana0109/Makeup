@@ -1,5 +1,5 @@
 # Preview link:
- ## http://localhost:3000/Ivana0109/Makeup
+ ## http:///ivana0109.github.io/Makeup
 
 
 
