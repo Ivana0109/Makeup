@@ -1,0 +1,10 @@
+.container{
+   
+    background-image: url("../../public/beige.png");
+display: flex;
+flex-direction: column;
+gap: 20px;
+    
+   }
+ 
+ 

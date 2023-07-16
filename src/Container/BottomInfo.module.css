@@ -1,0 +1,19 @@
+.box{
+    background-color: #f0f0f0;
+    font-size: 20px;
+    
+}
+.container{
+    width: 100%;
+    border-radius: 10px;
+    border: white solid 5px;
+}
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: #59bab2 3px solid;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }

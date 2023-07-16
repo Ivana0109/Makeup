@@ -1,0 +1,32 @@
+.container {
+  
+
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    min-height: 90vh;
+background-image: url("../../public/beige.png");
+  }
+ /* background-image: url("../../public/beige.png");*/
+ .btn{
+  width: 300px;
+  height: 100px;
+  border-radius: 30px;
+  background-color: #59bab2;
+  outline: none;
+  border: none;
+  color: white;
+
+  font-size: 27px;
+
+ }
+ .btn:hover {
+  color: white;
+  background-color: black;
+
+  outline: none;
+
+}

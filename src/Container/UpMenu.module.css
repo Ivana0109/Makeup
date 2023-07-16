@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+
+  color: white;
+    align-items: flex-start;
+    gap: 50px;
+    font-weight: bolder;
+    padding: 10px;
+    background-color: black;
+  }
+  .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    gap: 15px;
+  }

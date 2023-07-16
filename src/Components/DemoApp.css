@@ -1,0 +1,173 @@
+/*ukupni spremnik*/
+.block{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+   
+}
+.fc-button-group > .fc-button:focus, .fc .fc-button-group > .fc-button:hover {
+     z-index: 0; 
+}
+
+/* okvir cile tablice*/
+.fc .fc-scrollgrid {
+    border-bottom-width: 0px;
+    border-collapse: separate;
+    border-right-width: 0px;
+    font-size: 25px;
+   
+}
+.fc{ width: 40vw;
+}
+
+
+.fc .fc-scrollgrid, .fc .fc-scrollgrid table {
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid  rgb(47, 114, 141);
+   
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid  rgb(47, 114, 141);
+    background-color: white;
+}
+
+
+/* tockasti redak */
+.fc .fc-timegrid-slot-minor {
+     border-top-style: solid;
+     
+}
+/* stupac i redak*/
+.fc-theme-standard td, .fc-theme-standard th {
+    border: rgb(47, 114, 141) 3px solid;
+    color: rgb(86, 85, 85);
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    color: rgb(18, 54, 72);
+}
+
+
+
+
+/*boja tablice*/
+:root {
+       --fc-today-bg-color: rgba(244, 243, 237, 0.15);
+}
+
+/*odabrani datum*/
+    .fc-timegrid-event .fc-event-main {
+        padding: 1px 1px 0px;
+        
+    }
+
+    /*gornji botuni*/
+    .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        margin-left: -1px;
+        background-color: #59bab2;
+     
+        font-weight: bold;
+        border: white;
+    }
+    .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+        background-color: #59bab2;
+       
+        font-weight: bold;
+        border: white;
+    }
+/*gornji botuni*/
+
+
+/* gornji dio tablice*/
+   
+    .fc-v-event .fc-event-main {
+        color: var(--fc-event-text-color);
+        background-color: rgb(236, 132, 52);
+        height: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    
+        border: 1px solid  rgb(47, 114, 141);
+        
+        
+    }
+
+   /* iznad tablice menu*/
+   .fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1.5em;
+    font-size: 25px;
+
+
+    
+}
+.fc .fc-toolbar-title {
+    font-size: 25px;
+    margin: 0px;
+    color: white;
+}
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-left: -1px;
+  
+}
+
+.fc .fc-toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+   
+}
+
+.fc, .fc *, .fc ::after, .fc ::before {
+    box-sizing: border-box;
+}
+
+/*scroll bar*/
+element.style {
+    overflow: hidden scroll;
+   
+}
+
+.fc .fc-scroller-liquid-absolute {
+    inset: 0px;
+    position: absolute;
+  
+}
+
+.fc, .fc *, .fc ::after, .fc ::before {
+    box-sizing: border-box;
+   
+}
+
+/*veliki naslov*/
+.fc .fc-toolbar-title {
+    font-size: 25px;
+    margin: 0px;
+}
+
+
+
+.calendarContent{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+@media only screen and (max-width: 768px) {
+ 
+    .fc{ width: 90vw;
+    }
+  }
+  

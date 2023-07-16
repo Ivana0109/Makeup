@@ -1,0 +1,58 @@
+.containerBox {
+  
+    color: black;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+  
+  }
+  .menuPadding{
+    height: 155.2px;
+  }
+  .container {
+  display: flex;
+  border-radius: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-weight: bolder;
+  
+}
+
+.mobileContainer {
+  display: none;
+}
+
+.button {
+  border-radius: 20px;
+  font-size: 20px;
+  width: 200px;
+  height: 70px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  color: black;
+}
+.button:hover {
+  border: #59bab2 solid 3px;
+  outline: none;
+}
+.box{
+ display: flex;
+ flex-direction: column;
+ border: #43b1a8 solid 3px;
+}
+@media only screen and (max-width: 768px) {
+  .mobileContainer {
+    display: block;
+  }
+
+  .container {
+    display: none;
+  }
+}

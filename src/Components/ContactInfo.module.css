@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.form{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+    border: #59bab2 3px solid;
+    padding:15px;
+    border-radius: 10px;
+}
+.icons{
+    display: flex;
+   align-items: center;
+    font-size: 19px;
+    gap: 25px;
+  }

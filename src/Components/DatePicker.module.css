@@ -1,0 +1,16 @@
+.datePicker {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  padding: 10px;
+  outline: none;
+  line-height: 1.5;
+  color: black;
+ 
+  border-radius: 0.25rem;
+}
+.label{
+  font-size: 20px;
+  color: white;
+}

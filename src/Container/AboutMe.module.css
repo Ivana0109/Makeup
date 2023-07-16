@@ -1,0 +1,19 @@
+.container {
+  
+    min-height: 90vh;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+background-image: url("../../public/beige.png");
+  }
+  .box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: #43b1a8 solid 3px;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    
+   }
