@@ -1,5 +1,5 @@
 # Preview link:
- ## https://github.com/Ivana0109/Makeup.git
+ ## http://localhost:3000/Ivana0109/Makeup
 
 
 
