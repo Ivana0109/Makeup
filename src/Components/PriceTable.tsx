@@ -10,7 +10,7 @@ import Grid from "@mui/material/Grid";
 export default function ActionAreaCard() {
   return (
     <Grid sx={{ flexGrow: 1 }} container justifyContent="flex-start" alignItems={"center"} p={10} gap={5}  >
-    <Grid item md={12} sx={12}>
+    <Grid  md={12} xs={12}>
       <Grid container justifyContent="flex-start"  >
       
         <Card sx={{ maxWidth: 470 , height: 140, }}>
@@ -37,7 +37,7 @@ export default function ActionAreaCard() {
           </CardActionArea>
         </Card>
       </Grid> </Grid>
-      <Grid item md={12} sx={12}>
+      <Grid  md={12} xs={12}>
       <Grid container justifyContent="flex-start" >
         <Card sx={{ maxWidth: 470, height: 140}}>
           <CardActionArea>

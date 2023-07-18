@@ -14,6 +14,15 @@ dayjs.extend(timezone);
 /*  minTime={dayjs(new Date(0, 0, 0, 8))}
             maxTime={dayjs(new Date(0, 0, 0, 18, 45))}*/
 
+type Props={
+  titleDate:string,
+  titleTime:string,
+  valueTime:dayjs.Dayjs | null | undefined,
+  valueDate:dayjs.Dayjs | null | undefined,
+  setValueTime:(value: dayjs.Dayjs | null) => void
+  setValueDate:(value: dayjs.Dayjs | null) => void
+}
+
 const BasicDateTimePicker = ({
   titleDate,
   titleTime,
@@ -21,7 +30,10 @@ const BasicDateTimePicker = ({
   valueDate,
   setValueTime,
   setValueDate,
-}) => {
+} : Props) => {
+
+
+
   const cssStyle = {
     padding: " 20px",
     backgroundColor: "white",

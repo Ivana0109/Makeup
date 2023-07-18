@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { HtmlHTMLAttributes, useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import interactionPlugin from "@fullcalendar/interaction";
+import interactionPlugin, { DateClickArg } from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import "./DemoApp.css";
+import "./CalendarDisplay.css";
 import axios from "axios";
+import { ReservationInfo } from "./types";
+import { CustomContentGenerator, EventContentArg } from "@fullcalendar/core";
 
       
-
-function DemoApp({reservations}) {
+ type Props={
+reservations: ReservationInfo
+ }
+function CalendarDisplay({reservations}:Props) {
 
   
 
-  const renderEventContent=(eventInfo)=> {
-    return (
+  const renderEventContent=( eventInfo?: EventContentArg )=> {
+    return eventInfo && ( 
       <div className="calendarContent">
         <b>{eventInfo.timeText}</b>
         <br></br>
         <i>{eventInfo.event.title}</i>
-        <i>{eventInfo.event.description}</i> </div>
+        <i>{eventInfo.event.extendedProps.description}</i> </div>
     );
   }
 
-  const handleDateClick = (info) => {
+  const handleDateClick = (info:DateClickArg) => {
     // bind with an arrow function
     alert("Odaberi željeno vrijeme");
     console.log(info)
@@ -53,4 +57,4 @@ function DemoApp({reservations}) {
   );
 }
 
-export default DemoApp;
+export default CalendarDisplay;

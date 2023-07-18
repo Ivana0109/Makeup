@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Input from "./Input";
 
 import styles from "./FormInput.module.css";
-
 import DatePicker from "./DatePicker";
 import { Grid } from "@mui/material";
+import { FormData } from "./types";
+
 
 function FormInput() {
-  const [data, setData] = useState({
+  const [data, setData] = useState<FormData>({
     firstName: "",
     number: "",
     email: "",
@@ -15,16 +16,15 @@ function FormInput() {
     date: new Date(),
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement> |  React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
   };
 
   return (
-    
-    <Grid container justifyContent="center" spacing={2} >
+    <Grid container justifyContent="center" spacing={2}>
       <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-        <Grid item xs={12} md={12} p={5} >
-          <Grid container >
+        <Grid item xs={12} md={12} p={5}>
+          <Grid container>
             <div className={styles.container}>
               <Input
                 type="text"
@@ -39,12 +39,6 @@ function FormInput() {
                 setValue={(value) => setData({ ...data, email: value })}
               />{" "}
               <Input
-                type="number"
-                title="Broj telefona"
-                value={data.photo}
-                setValue={(value) => setData({ ...data, number: value })}
-              />{" "}
-              <Input
                 type="text"
                 title="Poruka"
                 value={data.description}
@@ -53,15 +47,18 @@ function FormInput() {
               <DatePicker
                 title="Željeni termin usluge"
                 value={data.date}
-                setValue={(value) => setData({ ...data, date: value })}
+                setValue={(value) => {
+                  setData({ ...data, date: value });
+                }}
               />
             </div>
-            </Grid>
-        </Grid><Grid item xs={12} md={12} >
+          </Grid>
+        </Grid>
+        <Grid item xs={12} md={12}>
           <Grid container justifyContent={"center"}>
-              <button className={styles.button}>POŠALJI</button>
-              </Grid> </Grid>
-         
+            <button onClick={(e) => handleSubmit(e)} className={styles.button}>POŠALJI</button>
+          </Grid>{" "}
+        </Grid>
       </form>
     </Grid>
   );

@@ -4,7 +4,11 @@ import FormInput from "./FormInput";
 import { BsX } from "react-icons/bs";
 import ReservationText from "./ReservationText";
 import { Grid } from "@mui/material";
-export default function Modal({buttonText}) {
+type Props={
+  buttonText:string
+  
+}
+export default function Modal({buttonText}:Props) {
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -19,12 +23,12 @@ export default function Modal({buttonText}) {
 
   return (
     <Grid sx={{ flexGrow: 1 }} container justifyContent="center" p={10}>
-      <Grid item md={12} sx={12}>
+      <Grid md={12} xs={12}>
         <Grid container justifyContent="center">
           <ReservationText />
         </Grid>
       </Grid>
-      <Grid item  md={12} sx={12}>
+      <Grid md={12} xs={12}>
         <Grid container justifyContent="center">
           <button onClick={toggleModal} className={styles.btn_modal}>
             {buttonText}

@@ -3,7 +3,13 @@ import DatePickerComponent from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./DatePicker.module.css";
 
-export default function DatePicker({ setValue, title, value }) {
+
+type Props={
+  setValue:(value:Date | null)=>void,
+  value:Date | null,
+  title:string
+}
+export default function DatePicker({ setValue, title, value }:Props) {
   return (
     <>
       <label>{title}:</label>

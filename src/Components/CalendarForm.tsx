@@ -7,19 +7,30 @@ import CalendarDatePicker from "./CalendarDatePicker";
 import Select from "./Select";
 import axios from "axios";
 import dayjs from "dayjs";
+type CalendarInfo= {
+  firstName: string,
+    number: string,
+    email: string,
+    type:string,
+    date:dayjs.Dayjs | null | undefined,
+    time:dayjs.Dayjs | null | undefined ,
+}
 
-function CalendarForm({refresh}) {
-  const [data, setData] = useState({
+type Props={
+  refresh: () => void
+}
+function CalendarForm({refresh}:Props) {
+  const [data, setData] = useState<CalendarInfo>({
     firstName: "",
     number: "",
     email: "",
     type: "",
-    date: "",
-    time: "",
+    date: dayjs(),
+    time: dayjs(),
   });
   const [saveData, setSaveData] = useState([]);
 console.log(data)
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const date = dayjs(data.date).utc().format().split("T")[0];
@@ -37,7 +48,7 @@ console.log(data)
 
   return (
     <Grid container justifyContent="center" spacing={2}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={(e)=>handleSubmit(e)}>
         <Grid item xs={12} md={12} p={5}>
           <div className={styles.container}>
           <CalendarDatePicker
@@ -46,7 +57,7 @@ console.log(data)
               valueDate={data.date}
               valueTime={data.time}
               setValueDate={(value) => setData({ ...data, date: value })}
-              setValueTime={(value) => setData({ ...data, time: value })}
+              setValueTime={(value ) => setData({ ...data, time: value })}
             />
             
             
@@ -65,7 +76,7 @@ console.log(data)
             <Input
               type="number"
               title="Broj telefona"
-              value={data.photo}
+              value={data.number}
               setValue={(value) => setData({ ...data, number: value })}
             />{" "}
             <Select

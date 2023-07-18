@@ -5,8 +5,12 @@ import { BsX } from "react-icons/bs";
 import ReservationText from "./ReservationText";
 
 import CalendarForm from "./CalendarForm";
+type Props={
+  refresh:()=>void
+ 
 
-export default function Modal({refresh}) {
+}
+export default function Modal({refresh}:Props) {
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
