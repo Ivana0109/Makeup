@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import Input from "./Input";
-
+import React, { useState } from "react"
 import styles from "./FormInput.module.css";
 import DatePicker from "./DatePicker";
 import { Grid } from "@mui/material";
-import { FormData } from "./types";
+import MuiInput from "./MuiInput";
 
 
-function FormInput() {
-  const [data, setData] = useState<FormData>({
+
+function MuiFormInput
+() {
+  const [data, setData] = useState({
     firstName: "",
     number: "",
     email: "",
@@ -16,7 +16,7 @@ function FormInput() {
     date: new Date(),
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement> |  React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
   };
 
@@ -26,19 +26,19 @@ function FormInput() {
         <Grid item xs={12} md={12} p={5}>
           <Grid container>
             <div className={styles.container}>
-              <Input
+              <MuiInput
                 type="text"
                 title="Ime i prezime"
                 value={data.firstName}
                 setValue={(value) => setData({ ...data, firstName: value })}
               />{" "}
-              <Input
+              <MuiInput
                 type="text"
                 title="Email"
                 value={data.email}
                 setValue={(value) => setData({ ...data, email: value })}
               />{" "}
-              <Input
+              <MuiInput
                 type="text"
                 title="Poruka"
                 value={data.description}
@@ -64,4 +64,5 @@ function FormInput() {
   );
 }
 
-export default FormInput;
+export default MuiFormInput
+;

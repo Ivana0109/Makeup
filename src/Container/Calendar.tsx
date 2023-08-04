@@ -5,6 +5,7 @@ import styles from "./Calendar.module.css";
 import axios from "axios";
 import { EventSourceInput } from "@fullcalendar/core";
 import { ReservationInfo } from "../Components/types";
+import MuiModal from "../Components/MuiModal";
 
 
 
@@ -24,7 +25,7 @@ function Calendar() {
       <div >
         <CalendarDisplay  reservations={reservations}/>
 
-        <CalendarModal refresh={refresh}  />
+        <MuiModal/>
       </div>
     </div>
   );

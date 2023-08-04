@@ -1,0 +1,50 @@
+.MuiDateCalendar-root .MuiPickersDay-root,.MuiDateCalendar-root .MuiDayCalendar-weekDayLabel 
+    {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    color: gray;
+    border-radius: 30px;
+}
+.MuiDateCalendar-root {
+    width: 600px !important;
+    max-height: 600px !important;
+}
+.MuiDateCalendar-root .MuiPickersLayout-contentWrapper,
+.MuiDateCalendar-root .MuiPickersSlideTransition-root{
+        height: 900px ;
+    }
+
+
+ .MuiPickersCalendarHeader-label{
+        font-size: 30px;
+        color: gray;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+    }
+    
+    
+    .MuiDateCalendar-root .MuiButtonBase-root.Mui-selected 
+    {background-color:#59bab2 !important;
+        
+    }
+   
+    
+.MuiInputBase-root.MuiOutlinedInput-root {
+    border-radius: 13px !important;
+   
+    height: 65px;
+    font-family:   "Montserrat", sans-serif;
+          font-weight: bold;
+          font-size:20px
+}
+
+.MuiTypography-root.MuiTypography-body2{
+    font-family:   "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size:18px
+}
+
+

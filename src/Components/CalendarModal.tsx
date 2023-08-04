@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CalendarModal.module.css";
-import FormInput from "./FormInput";
+
 import { BsX } from "react-icons/bs";
 import ReservationText from "./ReservationText";
 

@@ -1,0 +1,31 @@
+
+.customMuiButton.MuiButton-root{
+    height:50px;
+    width: 100px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    background-color: #59bab2;
+    color: white;
+    border-radius: 13px !important;
+    font-size: 20px !important;
+    border:  #59bab2 2px solid;
+    }
+
+    .customMuiButton.MuiButton-outlined{
+        background-color: white;
+        color: rgba(35, 33, 33, 0.749);
+        border:  #59bab2 2px solid;
+    }
+
+    .customMuiButton.MuiButton-root:hover{
+  background-color:  #59bab2;
+  border:  #59bab2 2px solid;
+       
+        }
+    
+        .customMuiButton.MuiButton-outlined:hover{
+            background-color: #59bab2;
+            color: white;
+        }
+    
+    

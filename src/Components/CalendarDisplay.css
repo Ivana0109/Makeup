@@ -7,8 +7,8 @@
     padding: 20px;
    
 }
-.fc-button-group > .fc-button:focus, .fc .fc-button-group > .fc-button:hover {
-     z-index: 0; 
+.fc-button-group > .fc-button {
+     z-index: 0 !important; 
 }
 
 /* okvir cile tablice*/
@@ -19,20 +19,21 @@
     font-size: 25px;
    
 }
-.fc{ width: 40vw;
+.fc{ width: 50vw;
 }
 
 
 .fc .fc-scrollgrid, .fc .fc-scrollgrid table {
     table-layout: fixed;
     width: 100%;
-    border: 1px solid  rgb(47, 114, 141);
+   
    
 }
 
 .fc-theme-standard .fc-scrollgrid {
+    border-radius: 20px;
     border: 1px solid  rgb(47, 114, 141);
-    background-color: white;
+    background-color: rgb(245, 243, 243);
 }
 
 
@@ -42,10 +43,17 @@
      
 }
 /* stupac i redak*/
-.fc-theme-standard td, .fc-theme-standard th {
-    border: rgb(47, 114, 141) 3px solid;
+.fc-theme-standard td td, .fc-theme-standard th th {
+    border:rgb(153, 153, 153) 3px solid;
     color: rgb(86, 85, 85);
 }
+
+.fc-theme-standard td, .fc-theme-standard th {
+    border: 0;
+}
+
+
+
 
 .fc .fc-col-header-cell-cushion {
     display: inline-block;
@@ -137,21 +145,6 @@
 }
 
 /*scroll bar*/
-element.style {
-    overflow: hidden scroll;
-   
-}
-
-.fc .fc-scroller-liquid-absolute {
-    inset: 0px;
-    position: absolute;
-  
-}
-
-.fc, .fc *, .fc ::after, .fc ::before {
-    box-sizing: border-box;
-   
-}
 
 /*veliki naslov*/
 .fc .fc-toolbar-title {
@@ -164,6 +157,11 @@ element.style {
 .calendarContent{
     width: 100%;
     overflow-wrap: break-word;
+}
+
+
+.fc .fc-col-header-cell-cushion {
+    font-size: 23px;
 }
 @media only screen and (max-width: 768px) {
  

@@ -22,7 +22,7 @@ function ContactInfo() {
           </div>
       
         
-        <div className={styles.formTime}>
+        <div>
           <h2>Radno vrijeme</h2> <h3>Svakim danom prema dogovorenim terminima</h3>
         </div>
         </div>

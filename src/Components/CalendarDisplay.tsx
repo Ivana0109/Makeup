@@ -7,6 +7,7 @@ import "./CalendarDisplay.css";
 import axios from "axios";
 import { ReservationInfo } from "./types";
 import { CustomContentGenerator, EventContentArg } from "@fullcalendar/core";
+import allLocales from '@fullcalendar/core/locales-all'
 
       
  type Props={
@@ -14,7 +15,6 @@ reservations: ReservationInfo
  }
 function CalendarDisplay({reservations}:Props) {
 
-  
 
   const renderEventContent=( eventInfo?: EventContentArg )=> {
     return eventInfo && ( 
@@ -39,16 +39,16 @@ function CalendarDisplay({reservations}:Props) {
     <div className="block">
 
       <FullCalendar
+      locales={allLocales} locale={'hr'} 
         plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
         eventContent={renderEventContent}
         allDaySlot={false}
         dateClick={handleDateClick}
         initialView="timeGrid"
-        weekends={false}
         headerToolbar={{
           left: "prev,next",
           center: "title",
-          right: "timeGridWeek,timeGridDay,timeGrid", // user can switch between the two
+          right: "timeGridWeek,timeGridDay", // user can switch between the two
         }}
         timeZone="Europe/Zagreb"
         events={reservations}
