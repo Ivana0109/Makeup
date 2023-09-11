@@ -1,0 +1,51 @@
+.reservationList{
+    height: 900px;
+    background-color:white;
+    border:rgb(201, 201, 201) 1px solid;
+
+    border-radius: 10px;
+   font-size: 20px;
+max-width: 700px;
+  
+  
+}
+
+
+.reservationButton.MuiButton-root {
+ padding: 20px;
+  
+
+ border-radius: 20px;
+    height:60px;
+    width:98%;
+    max-width: 300px;
+    font-family: "Montserrat", sans-serif;
+  
+    color:black;
+  
+    font-size: 20px ;
+    font-weight: 400;
+    
+  
+    }
+    .appointment{
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+
+  
+
+    .reservationButton.MuiButton-root:hover {  
+      color: rgb(243, 80, 10);
+      font-weight: 500;
+      background: transparent;
+    }
+
+
+    @media only screen and (max-width:  1200px) {
+        .reservationList{
+            width: 100%;
+        }
+       
+      }

@@ -1,6 +1,12 @@
 import { EventSourceInput } from "@fullcalendar/core";
 
 
+export const timeByType = {
+  "1": 2,
+  "2": 4,
+  "3": 5,
+};
+
 export type FormData = {
     firstName: string;
     number: number | string;
@@ -8,6 +14,15 @@ export type FormData = {
     description: string;
     date: Date | null;
   };
-  export type ReservationInfo = EventSourceInput | undefined
+  export type ReservationInfo ={
+    title: string;
+    description: string;
+    date: string;
+    time: string;
+    type: "1"| "2"|"3";
+    id: number;
+  };
+
+  
 
  

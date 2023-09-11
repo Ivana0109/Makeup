@@ -1,40 +1,47 @@
 import * as React from "react";
-import "./Select.css";
-import { Box, InputLabel, MenuItem, OutlinedInput, createMuiTheme } from "@mui/material";
+import "./SelectInput.css";
+import {
+  Box,
+  InputLabel,
+  MenuItem,
+  OutlinedInput,
+ 
+} from "@mui/material";
 import Select from "@mui/material/Select";
 
 type Props = {
   title: string;
-  options: string[];
+  options: Options;
   setValue: (value: string) => void;
   chosenValue: any;
 };
 
-
-
+type Options = { [key: string]: string };
 
 function SelectInput({ title, options, setValue, chosenValue }: Props) {
   return (
-    <Box >
-
-      <Select sx={{ width: 1}}  
-       
-        style={{  fontFamily: "Montserrat ",
-         fontSize: "20px",color:"black", backgroundColor:"white", borderRadius:"13px",}}
- 
+    <Box>
+      <Select
+        sx={{ width: 1 }}
+        style={{
+          fontFamily: "Montserrat ",
+          fontSize: "20px",
+          color: "black",
+          backgroundColor: "white",
+          borderRadius: "13px",
+        }}
         value={chosenValue}
         onChange={(e) => {
+          console.log(e.target.value)
           setValue(e.target.value);
         }}
+      >
+        {Object.keys(options).map((key) => {
         
-      > 
-        {options.map((item) => {
           return (
-            <MenuItem sx={{ fontSize: 20, color:"grey" }} value={item}
-            
-            
-            >
-              {item}
+            <MenuItem sx={{ fontSize: 20, color: "grey" }} value={key}>
+              {options[key]}
+              
             </MenuItem>
           );
         })}

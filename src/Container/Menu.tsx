@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 import { slide as MobileMenu } from "react-burger-menu";
+import { Button } from "@mui/material";
 
 function Menu() {
   const mobileMenuStyles = {
@@ -53,7 +54,7 @@ function Menu() {
     setScrollPosition(position);
   };
 
-  const top = scrollPosition < 70 ? 70 - scrollPosition : 0;
+  const top = scrollPosition < 40 ? 40 - scrollPosition : 0;
   
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, {
@@ -71,33 +72,33 @@ function Menu() {
       <div className={styles.mobileContainer}>
         <MobileMenu noOverlay right styles={mobileMenuStyles}>
           <Link to={"/"}>
-            <button className={styles.button}>POČETNA</button>
+             POČETNA 
           </Link>
           <Link to={"/popis"}>
-            <button className={styles.button}>POPIS</button>
-          </Link>
+             POPIS
+           </Link>
         </MobileMenu>
       </div>
 
-      <div className={styles.containerBox} style={{ top: top }}>
-        <div style={{ fontSize: "47px" }}>
+      <div className={scrollPosition<40? styles.containerBox : styles.containerBoxAfterScroll} style={{ top: top }}>
+        <div className={styles.logo} >
           {" "}
-          MAKE UP <div style={{ fontWeight: "lighter" }}>SPLIT</div>
+          MAKE UP <div className={styles.logo}>SPLIT</div>
         </div>
         <div className={styles.container}>
           {" "}
-          <Link to={"/"}>
-            <button className={styles.button}>POČETNA</button>
+          <Link  to={"/"}  className={styles.underlineButton}>
+              POČETNA 
           </Link>
-          <Link to={"/popis"}>
-            <button className={styles.button}>POPIS</button>
+          <Link to={"/popis"} className={styles.underlineButton}>
+             POPIS
           </Link>
-          <Link to={"/opis"}>
-            <button className={styles.button}>O MENI</button>
-          </Link>
+       <Link to={"/opis"} className={styles.underlineButton}>
+         O MENI 
+          </Link> 
         </div>
       </div>
-      <div className={styles.menuPadding}></div>
+
     </>
   );
 }

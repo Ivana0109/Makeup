@@ -1,7 +1,7 @@
 .MuiDateCalendar-root .MuiPickersDay-root,.MuiDateCalendar-root .MuiDayCalendar-weekDayLabel 
     {
         font-family: "Montserrat", sans-serif;
-        font-weight: bold;
+     
     width: 80px;
     height: 80px;
     font-size: 20px;
@@ -10,7 +10,7 @@
 }
 .MuiDateCalendar-root {
     width: 600px !important;
-    max-height: 600px !important;
+    max-height: 600px !important; 
 }
 .MuiDateCalendar-root .MuiPickersLayout-contentWrapper,
 .MuiDateCalendar-root .MuiPickersSlideTransition-root{
@@ -22,7 +22,7 @@
         font-size: 30px;
         color: gray;
         font-family: "Montserrat", sans-serif;
-        font-weight: bold;
+     
     }
     
     
@@ -37,13 +37,13 @@
    
     height: 65px;
     font-family:   "Montserrat", sans-serif;
-          font-weight: bold;
+       
           font-size:20px
 }
 
 .MuiTypography-root.MuiTypography-body2{
     font-family:   "Montserrat", sans-serif;
-    font-weight: bold;
+    
     font-size:18px
 }
 

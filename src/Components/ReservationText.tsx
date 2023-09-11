@@ -4,9 +4,8 @@ function ReservationText() {
   return (
     <div>
       <div className={styles.box}>
-        
         <div className={styles.h2}>
-         VEČERNJI,<br></br> DNEVNI, <br></br> VJENČANI MAKE-UP
+          VEČERNJI,<br></br> DNEVNI, <br></br> VJENČANI MAKE-UP
         </div>
       </div>
     </div>

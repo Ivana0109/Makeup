@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./InfoText.module.css";
+import styles from "./CoverText.module.css";
 import { Grid } from "@mui/material";
-function InfoText() {
+function CoverText() {
   return (
 
       <div className={styles.container}>
@@ -22,4 +22,4 @@ function InfoText() {
   );
 }
 
-export default InfoText;
+export default CoverText;

@@ -11,6 +11,7 @@ import "dayjs/locale/hr";
 
 import "./CalendarDatePicker.css";
 import ButtonTimePicker from "./ButtonTimePicker";
+import { ReservationInfo } from "./types";
 
 
 dayjs.extend(utc);
@@ -21,6 +22,7 @@ dayjs.extend(timezone);
 type Props = {
   titleDate: string;
   titleTime: string;
+  reservationTimes:string[]
   valueTime: dayjs.Dayjs | null | undefined;
   valueDate: dayjs.Dayjs | null | undefined;
   setValueTime: (value: dayjs.Dayjs | null) => void;
@@ -29,7 +31,7 @@ type Props = {
 
 const BasicDateTimePicker = ({
   titleDate,
-
+  reservationTimes,
   valueTime,
   valueDate,
   setValueTime,
@@ -61,7 +63,7 @@ const BasicDateTimePicker = ({
       </DemoContainer>
       
     </LocalizationProvider>
-   <ButtonTimePicker    onChange={setValueTime}  value={dayjs(valueTime)}/></div>
+   <ButtonTimePicker reservationTimes={reservationTimes}   onChange={setValueTime}  value={dayjs(valueTime)}/></div>
   );
 };
 export default BasicDateTimePicker;

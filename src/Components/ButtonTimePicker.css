@@ -3,7 +3,7 @@
     height:50px;
     width: 100px;
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+   
     background-color: #59bab2;
     color: white;
     border-radius: 13px !important;
@@ -22,6 +22,14 @@
   border:  #59bab2 2px solid;
        
         }
+
+
+        
+.customMuiButton.MuiButton-root.Mui-disabled{
+    font-size: 12px !important;
+   color:  rgb(65, 64, 64);
+   border:   rgb(193, 193, 193) 2px solid;
+}
     
         .customMuiButton.MuiButton-outlined:hover{
             background-color: #59bab2;
