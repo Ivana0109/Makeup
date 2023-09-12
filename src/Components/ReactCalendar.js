@@ -24,7 +24,7 @@ function ReactCalendar({ value, onChange }) {
   return (
     <div className="calendarContainer">
       <div className="calendarTitle">{translate("selectADay")}</div>
-      <Calendar onChange={handleClickDay} value={value}  tileDisabled={tileDisabled} />
+      <Calendar onChange={handleClickDay} value={value}  tileDisabled={tileDisabled} minDetail="month" />
     </div>
   );
 }

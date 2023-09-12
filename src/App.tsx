@@ -5,9 +5,10 @@ import UpperHeader from "./Container/UpperHeader";
 import CoverPage from "./Container/CoverPage";
 import AboutMe from "./Container/AboutMe";
 import Calendar from "./Container/Calendar";
-
+import { LanguageProvider } from "./utils/useTranslate";
 function App() {
   return (
+    <LanguageProvider>
     <Router>
       <UpperHeader />
       <Menu />
@@ -18,6 +19,7 @@ function App() {
         <Route path="opis" element={<AboutMe />} />
       </Routes>
     </Router>
+    </LanguageProvider>
   );
 }
 

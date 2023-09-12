@@ -18,7 +18,7 @@ const translate=useTranslation()
  
   const processedTimeOptions = timeOptions.map((item) => {
     const time = item.format("HH:mm");
-    return reservationTimes.includes(time) ? "REZERVIRANO" : item;
+    return reservationTimes.includes(time) ? translate("reserved") : item;
   });
   console.log(processedTimeOptions);
 

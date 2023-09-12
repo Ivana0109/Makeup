@@ -26,7 +26,7 @@ function PriceButtons() {
           </Button>
         </Grid>
         <Grid md={12} xs={12}>
-          <Button className="priceSecondMuiButton">
+          <Button  className="priceSecondMuiButton" >
           {translate("proffesionalMakeupWithLashExtensions")}
             <div className="priceEuros">
               30 <IoLogoEuro />

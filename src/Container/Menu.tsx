@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 import { slide as MobileMenu } from "react-burger-menu";
 import { Button } from "@mui/material";
+import useTranslation from "../utils/useTranslate";
 
 function Menu() {
+  const translate=useTranslation()
+
   const mobileMenuStyles = {
     bmBurgerButton: {
       position: "relative",
@@ -72,7 +75,7 @@ function Menu() {
       <div className={styles.mobileContainer}>
         <MobileMenu noOverlay right styles={mobileMenuStyles}>
           <Link to={"/"}>
-             POČETNA 
+             {translate("home")}
           </Link>
           <Link to={"/popis"}>
              POPIS
@@ -88,13 +91,13 @@ function Menu() {
         <div className={styles.container}>
           {" "}
           <Link  to={"/"}  className={styles.underlineButton}>
-              POČETNA 
+          {translate("home")}
           </Link>
           <Link to={"/popis"} className={styles.underlineButton}>
-             POPIS
+          {translate("reservations")}
           </Link>
        <Link to={"/opis"} className={styles.underlineButton}>
-         O MENI 
+       {translate("aboutMe")}
           </Link> 
         </div>
       </div>

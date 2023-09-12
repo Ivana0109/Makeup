@@ -9,7 +9,7 @@ import useTranslation from "../utils/useTranslate";
 
 
 function ReservationList({ reservationTimes }) {
-const translate=useTranslation
+const translate=useTranslation()
 
   const timeOptions = new Array(27).fill(0).map((item, index) =>
     dayjs()
@@ -21,7 +21,7 @@ const translate=useTranslation
 
  
   const processedTimeOptions =timeOptions.map((item) =>
-      reservationTimes.includes(item) ? "REZERVIRANO" : item
+      reservationTimes.includes(item) ? translate("reserved") : item
     );
 
 
@@ -32,15 +32,16 @@ const translate=useTranslation
     
       <Grid container alignContent={"center"} justifyContent={"start"} paddingLeft={7} className="appointment" >
     
-       {translate("freeAppointmnet")}
+       {translate("appointmentHour")}
       </Grid>
       {processedTimeOptions.map((item) => (
         <Grid container alignContent={"center"} justifyContent={"center"} md={4} xs={6} >
-          <div>
-          <Button className="reservationButton" size="medium" key={item}>
+        
+          <Button 
+              disabled={item ===translate("reserved")} className="reservationButton" size="medium" key={item}>
          
             {item}
-          </Button></div>
+          </Button>
         </Grid>
       ))}
     </Grid>

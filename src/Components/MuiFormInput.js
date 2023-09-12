@@ -3,11 +3,15 @@ import styles from "./FormInput.module.css";
 import DatePicker from "./DatePicker";
 import { Grid } from "@mui/material";
 import MuiInput from "./MuiInput";
+import useTranslation from "../utils/useTranslate";
 
 
 
 function MuiFormInput
 () {
+const translate=useTranslation()
+
+
   const [data, setData] = useState({
     firstName: "",
     number: "",
@@ -56,7 +60,7 @@ function MuiFormInput
         </Grid>
         <Grid item xs={12} md={12}>
           <Grid container justifyContent={"center"}>
-            <button onClick={(e) => handleSubmit(e)} className={styles.button}>{translate("senda")}</button>
+            <button onClick={(e) => handleSubmit(e)} className={styles.button}>{translate("send")}</button>
           </Grid>{" "}
         </Grid>
       </form>

@@ -11,6 +11,7 @@ import MuiInput from "./MuiInput";
 import SelectInput from "./SelectInput";
 import useReservationData from "../utils/useReservationData";
 import { timeByType } from "./types";
+import useTranslation from "../utils/useTranslate";
 type CalendarInfo = {
   firstName: string;
   number: string;
@@ -24,6 +25,8 @@ type Props = {
   refresh: () => void;
 };
 function CalendarForm({ refresh }: Props) {
+const translate=useTranslation()
+
   const [data, setData] = useState<CalendarInfo>({
     firstName: "",
     number: "",
@@ -77,14 +80,15 @@ return !result.some((item)=>reservationTimes.includes(item))
     <Grid container justifyContent="center" className={styles.scroll}>
       <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <Grid item xs={12} md={12} p={2}>
-          <CalendarDatePicker
+          <CalendarDatePicker 
             reservationTimes={reservationTimes}
-            titleDate="ODABERI DATUM:"
-            titleTime="ODABERI VRIJEME:"
+            titleDate="Odaberi datum:"
+              
             valueDate={data.date}
             valueTime={data.time}
             setValueDate={(value) => setData({ ...data, date: value })}
             setValueTime={(value) => setData({ ...data, time: value })}
+            
           />
         </Grid>
         <Grid item xs={12} md={12} p={2}>
@@ -125,8 +129,8 @@ return !result.some((item)=>reservationTimes.includes(item))
         </Grid>
         <Grid item xs={12} md={12}>
           <Grid container justifyContent={"center"}>
-            <Button disabled={!canSubmitForm} className="modalMuiButton" type="submit">
-              POŠALJI
+            <Button disabled={!canSubmitForm} className="sendMuiButton" type="submit">
+              {translate("send")}
             </Button>
           </Grid>{" "}
         </Grid>

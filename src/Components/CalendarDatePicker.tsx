@@ -21,7 +21,7 @@ dayjs.extend(timezone);
 
 type Props = {
   titleDate: string;
-  titleTime: string;
+ 
   reservationTimes:string[]
   valueTime: dayjs.Dayjs | null | undefined;
   valueDate: dayjs.Dayjs | null | undefined;
@@ -44,7 +44,8 @@ const BasicDateTimePicker = ({
 
   
   return (
-    <div>
+    <div className="
+    calendarDatePicker"> 
       
     <LocalizationProvider adapterLocale={"hr"} dateAdapter={AdapterDayjs}>
       <DemoContainer components={["DateTimePicker"]} >

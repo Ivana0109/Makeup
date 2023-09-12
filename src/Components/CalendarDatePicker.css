@@ -17,10 +17,23 @@
         height: 900px ;
     }
 
+    .calendarDatePicker .MuiTypography-root.MuiTypography-body2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        padding-top: 20px;
+padding-bottom: 20px;    }
+      
+
+.MuiDateCalendar-root .MuiTypography-body{
+     font-weight: 700 ;
+    }
+
 
  .MuiPickersCalendarHeader-label{
-        font-size: 30px;
-        color: gray;
+        font-size: 22px;
+        font-weight: 700;
+        color: black;
         font-family: "Montserrat", sans-serif;
      
     }
