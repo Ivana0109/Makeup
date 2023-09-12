@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CalendarForm from "./CalendarForm";
 import "./MuiModal.css";
+import useTranslation from "../utils/useTranslate";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -17,6 +19,9 @@ const style = {
   p: 4,
 };
 function MuiModal({ refresh }) {
+  const translate=useTranslation()
+
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -24,7 +29,8 @@ function MuiModal({ refresh }) {
   return (
     <div className="modalConatiner">
       <Button className="modalMuiButton" onClick={handleOpen}>
-        REZERVIRAJ TERMIN
+      {translate("bookAnAppointment")}
+
       </Button>
       <Modal
         keepMounted

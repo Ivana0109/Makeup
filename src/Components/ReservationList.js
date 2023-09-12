@@ -5,9 +5,12 @@ import dayjs from "dayjs";
 import { useMemo } from "react";
 import { timeByType } from "./types";
 import { Link } from "react-router-dom";
+import useTranslation from "../utils/useTranslate";
 
 
 function ReservationList({ reservationTimes }) {
+const translate=useTranslation
+
   const timeOptions = new Array(27).fill(0).map((item, index) =>
     dayjs()
       .utc()
@@ -29,7 +32,7 @@ function ReservationList({ reservationTimes }) {
     
       <Grid container alignContent={"center"} justifyContent={"start"} paddingLeft={7} className="appointment" >
     
-        SLOBODNI TERMINI:{" "}
+       {translate("freeAppointmnet")}
       </Grid>
       {processedTimeOptions.map((item) => (
         <Grid container alignContent={"center"} justifyContent={"center"} md={4} xs={6} >

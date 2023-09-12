@@ -3,8 +3,11 @@ import dayjs from "dayjs";
 import React, { useState } from "react";
 import "./ButtonTimePicker.css";
 import { timeByType } from "./types";
+import useTranslation from "../utils/useTranslate";
 
 function ButtonTimePicker({ onChange, value, reservationTimes }) {
+const translate=useTranslation()
+
   const timeOptions = new Array(27).fill(0).map((item, index) =>
     dayjs()
       .utc()
@@ -21,7 +24,7 @@ function ButtonTimePicker({ onChange, value, reservationTimes }) {
 
   return (
     <div>
-      <h3>ODABERI VRIJEME: </h3>
+      <div className="timePicker">{translate("selectTime")} </div>
       <Grid container justifyContent="center" gap={8}>
         {processedTimeOptions.map((item) => (
           <Grid item xs={3} md={1}>

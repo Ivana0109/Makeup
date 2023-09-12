@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "./ReactCalendar.css";
+import useTranslation from "../utils/useTranslate";
 import dayjs from "dayjs";
 
 function ReactCalendar({ value, onChange }) {
+  const translate= useTranslation()
+
+
   const handleClickDay = (value) => {
     onChange(value);
   };
@@ -19,6 +23,7 @@ function ReactCalendar({ value, onChange }) {
 
   return (
     <div className="calendarContainer">
+      <div className="calendarTitle">{translate("selectADay")}</div>
       <Calendar onChange={handleClickDay} value={value}  tileDisabled={tileDisabled} />
     </div>
   );

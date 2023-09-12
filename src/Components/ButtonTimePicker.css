@@ -10,7 +10,10 @@
     font-size: 20px !important;
     border:  #59bab2 2px solid;
     }
-
+.timePicker{
+    padding: 10px;
+    font-size: 18px;
+}
     .customMuiButton.MuiButton-outlined{
         background-color: white;
         color: rgba(35, 33, 33, 0.749);

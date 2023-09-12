@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./Reservationtext.module.css";
+import useTranslation from "../utils/useTranslate";
 function ReservationText() {
+const translate=useTranslation()
+
   return (
     <div>
       <div className={styles.box}>
         <div className={styles.h2}>
-          VEČERNJI,<br></br> DNEVNI, <br></br> VJENČANI MAKE-UP
+        {translate("evening")}<br></br>   {translate("daily")}, <br></br>   {translate("wedding")}
         </div>
       </div>
     </div>

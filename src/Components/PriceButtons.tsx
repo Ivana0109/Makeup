@@ -2,8 +2,10 @@ import "./PriceButtons.css";
 import { Button } from "@mui/material";
 import { IoLogoEuro } from "react-icons/io";
 import Grid from "@mui/material/Grid";
+import useTranslation from "../utils/useTranslate";
 
 function PriceButtons() {
+  const translate=useTranslation()
   return (
     <div className="priceContainer">
       <Grid
@@ -16,7 +18,7 @@ function PriceButtons() {
       >
         <Grid md={12} xs={12}>
           <Button className="priceMuiButton">
-            Profesionalno šminkanje{" "}
+          {translate("proffesionalMakeup")}
             <div className="priceEuros">
               25
               <IoLogoEuro />
@@ -25,7 +27,7 @@ function PriceButtons() {
         </Grid>
         <Grid md={12} xs={12}>
           <Button className="priceSecondMuiButton">
-            Profesionalno šminkanje s umjetnim trepavicama
+          {translate("proffesionalMakeupWithLashExtensions")}
             <div className="priceEuros">
               30 <IoLogoEuro />
             </div>

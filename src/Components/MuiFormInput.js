@@ -56,7 +56,7 @@ function MuiFormInput
         </Grid>
         <Grid item xs={12} md={12}>
           <Grid container justifyContent={"center"}>
-            <button onClick={(e) => handleSubmit(e)} className={styles.button}>POŠALJI</button>
+            <button onClick={(e) => handleSubmit(e)} className={styles.button}>{translate("senda")}</button>
           </Grid>{" "}
         </Grid>
       </form>

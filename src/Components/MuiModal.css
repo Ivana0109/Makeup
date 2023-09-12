@@ -1,6 +1,6 @@
 .modalMuiButton.MuiButton-root{
      font-family: "Montserrat", sans-serif;
-
+     font-weight: 400;
     height:100px;
     width: 320px;
     font-size: 20px;
@@ -12,7 +12,7 @@
 
 .modalMuiButton.MuiButton-root:hover{
     background-color: #3fe0d0;
-    font-weight: 500;
+    font-weight: 400;
 }
 .modalConatiner{
 

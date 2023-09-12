@@ -1,11 +1,17 @@
 .calendarContainer {
   width: 600px;
-  height: 700px;
+  height: 780px;
   background-color:white;
   border-radius: 10px;
   padding: 30px;
 
 
+}
+
+
+.calendarTitle{
+font-size:22px ;
+padding: 20px;
 }
 .react-calendar__tile.react-calendar__month-view__days__day {
   font-size: 22px;
@@ -43,7 +49,7 @@
  
 
   color: rgb(243, 80, 10) !important;
-  font-weight: 600;
+  font-weight: 500;
   
   
 }
