@@ -1,5 +1,6 @@
 
 .customMuiButton.MuiButton-root{
+    text-transform: initial ;
     height:50px;
     width: 100px;
     font-family: "Montserrat", sans-serif;
@@ -7,7 +8,7 @@
     background-color: #59bab2;
     color: white;
     border-radius: 13px !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     border:  #59bab2 2px solid;
     }
 .timePicker{
@@ -31,8 +32,9 @@
 
         
 .customMuiButton.MuiButton-root.Mui-disabled{
-    font-size: 12px !important;
-   color:  rgb(152, 149, 149);
+    font-size: 14px !important;
+    font-weight: 600;
+   color:  rgb(70, 69, 69);
    border:   rgb(193, 193, 193) 2px solid;
 }
     

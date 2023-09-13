@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import useTranslation from "../utils/useTranslate";
 
 function PriceButtons() {
-  const translate=useTranslation()
+  const translate = useTranslation();
   return (
     <div className="priceContainer">
       <Grid
@@ -16,22 +16,22 @@ function PriceButtons() {
         p={10}
         gap={5}
       >
-        <Grid md={12} xs={12}>
-          <Button className="priceMuiButton">
-          {translate("proffesionalMakeup")}
-            <div className="priceEuros">
-              25
-              <IoLogoEuro />
-            </div>
-          </Button>
+        <Grid md={6} xs={6} className="priceButtonsAling">
+          <div className="underlineButton">
+            {translate("proffesionalMakeup")}
+          </div>
+          <div className="priceEuros">
+            25
+            <IoLogoEuro />
+          </div>
         </Grid>
-        <Grid md={12} xs={12}>
-          <Button  className="priceSecondMuiButton" >
-          {translate("proffesionalMakeupWithLashExtensions")}
-            <div className="priceEuros">
-              30 <IoLogoEuro />
-            </div>
-          </Button>
+        <Grid md={6} xs={6} className="priceButtonsAling">
+          <div className="underlineButton">
+            {translate("proffesionalMakeupWithLashExtensions")}
+          </div>
+          <div className="priceEuros">
+            30 <IoLogoEuro />
+          </div>
         </Grid>
       </Grid>{" "}
     </div>

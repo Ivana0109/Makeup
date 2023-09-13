@@ -13,7 +13,7 @@ max-width: 700px;
 
 .reservationButton.MuiButton-root {
  padding: 20px;
-  
+ text-transform: initial ;
 
  border-radius: 20px;
     height:60px;
@@ -29,27 +29,25 @@ max-width: 700px;
   
     }
 .reservationButton.MuiButton-root.Mui-disabled{
-    font-size: 15px !important;
+    font-size: 17px !important;
+    font-weight: 600;
    color:  rgb(15, 15, 15);
  
 }
 
     .appointment{
-     
+     padding-top: 40px;
+   
+     padding-bottom: 20px;
         font-size:22px ;
-        padding: 20px;
+        
         font-weight: 700;
         }
-        -disabled{
-          font-size: 12px !important;
-         color:  rgb(65, 64, 64);
-         border:   rgb(193, 193, 193) 2px solid;
-      }
-  
+       
 
     .reservationButton.MuiButton-root:hover {  
-      color: rgb(243, 80, 10);
-      font-weight: 500;
+      color: #0ec5b5  ;
+      font-weight: 600;
       background: transparent;
     }
 

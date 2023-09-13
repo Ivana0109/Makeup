@@ -16,10 +16,12 @@ function MuiInput({ setValue, title, type, value }: Props) {
         fullWidth
         inputProps={{
           sx: {
+        
             fontFamily: "Montserrat ",
             
             paddingLeft: "15px",
-            fontSize: "20px",
+            fontSize: "18px",
+    
           },
         }}
         InputProps={{

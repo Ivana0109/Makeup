@@ -24,8 +24,10 @@ function Calendar() {
         </Grid>
         <Grid container  md={12}  lg={6} justifyContent={"center"} alignItems={"center"}>
           <ReservationList reservationTimes={reservationTimes} />
+        </Grid >
+        <Grid container justifyContent={"center"} alignItems={"center"}  md={12} lg={12} >
+        <MuiModal  refresh={refresh} />
         </Grid>
-        <MuiModal refresh={refresh} />
       </Grid>
     </div>
   );
