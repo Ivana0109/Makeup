@@ -18,11 +18,17 @@
     height: 400px;
    }
    .h2{
- 
-    font-size: 27px
+    font-weight: 500;
+    color: black;
+    font-size: 27px;
+   
    }
-   .h3{
-    font-weight: light;
-    font-size: 22px
+   .h3{ 
+    display: flex;
+   
+
+    font-weight: 400;
+    color: black;
+    font-size: 0px
    }
    

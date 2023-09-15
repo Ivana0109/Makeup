@@ -39,7 +39,7 @@ background-size: cover;
       font-weight: 700;
   height:135px;
   width: 600px;
-  font-size: 24px;
+  font-size: 20px;
        border-radius: 13px;
        color: rgb(153, 149, 149);
     
@@ -70,20 +70,19 @@ background-size: cover;
 
 
 .underlineButton {
-   color: rgb(146, 145, 145);
-    font-size: 160%;
-  font-weight: 400; 
+ 
+   font-size: 30px;
+
    
-    text-decoration: none;
-    background: linear-gradient(#43b1a8, #43b1a8) bottom / 0 .1em no-repeat;
-    transition:  0.5s ;
-   background-position: left bottom;
+   color: rgb(217, 213, 213);
+   font-family: 'Josefin Sans', sans-serif;
  
  }
  
  .underlineButton:hover {
-    background-size: 100% .2px;
-    color: rgb(210, 206, 206);
+   color: rgb(81, 171, 164);
+   transition: 1.5s;
+ 
  
  }
  

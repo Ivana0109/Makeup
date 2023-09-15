@@ -21,11 +21,11 @@ type Options = { [key: string]: string };
 function SelectInput({ title, options, setValue, chosenValue }: Props) {
   return (
     <Box>
-      <Select
+      <Select 
         sx={{ width: 1 }}
         style={{
           fontFamily: "Montserrat ",
-          fontSize: "20px",
+          fontSize: "18px !Important" ,
           color: "black",
           backgroundColor: "white",
           borderRadius: "13px",

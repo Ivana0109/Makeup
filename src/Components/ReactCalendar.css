@@ -15,7 +15,8 @@ padding: 20px;
 font-weight: 700;
 }
 .react-calendar__tile.react-calendar__month-view__days__day {
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 500;
   color: rgb(37, 37, 37);
   border: none;
   height: 100px;
@@ -33,12 +34,14 @@ font-weight: 700;
 .react-calendar__tile.react-calendar__month-view__days__day:disabled {
   color: rgb(179, 178, 178);
   border: none  !important;
+  font-weight: 400;
 }
 
 .react-calendar__tile.react-calendar__month-view__days__day:disabled:hover {
   background-color: white !important;
   color: rgb(179, 178, 178) !important; 
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  font-weight: 400;
 }
 .react-calendar__tile{
   background-color: white !important;
@@ -102,7 +105,6 @@ abbr[title] {
   padding-left: 20px;
 gap: 3px;
 
-  font-weight: 400;
  
  
 }
@@ -145,9 +147,9 @@ font-weight: 600;
 
   height: 60px;
   border-radius: 13px;
-
+font-weight: 500;
 border: rgb(194, 193, 193) 2px solid;  background-color: white;
-  font-size: 19px;
+  font-size: 18px;
   color:black;
 }
 

@@ -9,8 +9,9 @@ border-radius: 16px;
 }
  .MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters{
    font-family:   "Montserrat", sans-serif;
-        
-          font-size:20px
+        color: black !important;
+        font-weight: 500;
+          font-size:18px
 
  }
  .MuiButtonBase-root.MuiMenuItem-root.Mui-selected:hover {
