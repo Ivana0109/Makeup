@@ -7,7 +7,7 @@ function FooterInfoContainer() {
   return (
     <div className={styles.box}>
       <Grid container justifyContent="center" p={4}>
-        <Grid xs={12} md={6} p={2} >
+        <Grid container  justifyContent="flex-start" alignItems={"center"}  xs={12} md={6} p={2} >
           <FooterInfo />
         </Grid>
         <Grid xs={12} md={6} p={2}>

@@ -7,11 +7,23 @@
     font-weight:600 !important
     ;
     font-size: 17px !important;
-    background-color: #59bab2;
-    color: white;
-    border-radius: 13px !important;
-    border:  #59bab2 2px solid;
+background-color: transparent ;
+    color: black;
+    border-style: none !important;
+    box-shadow: none !important;
+
     }
+
+
+
+    .customMuiButton.MuiButton-root.MuiButton-contained {
+       
+   
+        color: rgb(73, 202, 189);
+        
+    
+        }
+
 .timePicker{
     padding-top: 30px;
     padding-bottom: 40px;
@@ -21,17 +33,16 @@
     .customMuiButton.MuiButton-outlined{
         font-weight:600 !important
         ;
+   
         font-size: 17px !important;
-        background-color: white;
-        color: rgba(35, 33, 33, 0.749);
-        border:  #59bab2 2px solid;
+        
+   border:none  !important;
     }
 
     .customMuiButton.MuiButton-root:hover{
-  background-color:  #59bab2;
 
-  border:  #59bab2 2px solid;
-       
+        background-color: transparent !important;
+
         }
 
 
@@ -44,8 +55,8 @@
 }
     
         .customMuiButton.MuiButton-outlined:hover{
-            background-color: #59bab2;
-            color: white;
+            color: #0ec5b5 !important  ;
+            font-weight: 600;
         }
     
     

@@ -18,15 +18,18 @@ function Calendar() {
 
   return (
     <div className={styles.container}>
-      <Grid container >
-        <Grid container justifyContent={"center"} alignItems={"center"}  md={12} lg={6} >
+      <Grid container  >
+      
+        <Grid container  justifyContent={"center"}  md={12} lg={6} p={4}>
           <ReactCalendar onChange={setSelectedDate} value={selectedDate} />
         </Grid>
-        <Grid container  md={12}  lg={6} justifyContent={"center"} alignItems={"center"}>
-          <ReservationList reservationTimes={reservationTimes} />
-        </Grid >
-        <Grid container justifyContent={"center"} alignItems={"center"}  md={12} lg={12} >
-        <MuiModal  refresh={refresh} />
+     <Grid container justifyContent={"center"} md={12} lg={6}>
+        <Grid container justifyContent={"center"} p={4}>
+      
+        <ReservationList reservationTimes={reservationTimes} />  </Grid>
+        <Grid container p={4} justifyContent={"center"}>
+        <MuiModal  refresh={refresh}  />  
+        </Grid>
         </Grid>
       </Grid>
     </div>

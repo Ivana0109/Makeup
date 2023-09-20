@@ -13,12 +13,7 @@
   
   }
 
-  .containerBox:hover{
-    background-color: hwb(0 100% 0%);
-    transition: background 0.4s;
-    color: black;
-    box-shadow: rgba(88, 88, 88, 0.45) 0px 25px 20px -20px;
-  }
+ 
   .containerBoxAfterScroll{
     box-shadow: rgba(88, 88, 88, 0.45) 0px 25px 20px -20px;
     z-index: 1;
@@ -41,7 +36,7 @@ color: black
   }
 
   .logo{
-    font-size: 47px;
+    font-size: 37px;
   }
   .container {
   display: flex;
@@ -70,7 +65,7 @@ color: black
  font-weight: 400; 
   
 	text-decoration: none;
-	background: linear-gradient(#43b1a8, #43b1a8) bottom / 0 .1em no-repeat;
+	background: linear-gradient(#111111, #0c0b0b) bottom / 0 .1em no-repeat;
 	transition:  0.5s ;
   background-position: left bottom;
 
@@ -78,7 +73,7 @@ color: black
 
 .underlineButton:hover {
 	background-size: 100% .2px;
-
+color: rgb(39, 39, 39);
 }
 
 /* Variations */

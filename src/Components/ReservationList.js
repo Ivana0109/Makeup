@@ -30,12 +30,12 @@ const translate=useTranslation()
   return (
     <Grid container  className="reservationList">
     
-      <Grid container alignContent={"center"} justifyContent={"start"} paddingLeft={7} className="appointment" >
+      <Grid container alignContent={"center"} justifyContent={"start"}  className="appointment" >
     
        {translate("appointmentHour")}
       </Grid>
       {processedTimeOptions.map((item) => (
-        <Grid container alignContent={"center"} justifyContent={"center"} md={4} xs={6} >
+        <Grid container alignContent={"center"} justifyContent={"center"}  md={2} xs={3} >
         
           <Button 
               disabled={item ===translate("reserved")} className="reservationButton" size="medium" key={item}>

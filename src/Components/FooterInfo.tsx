@@ -4,7 +4,7 @@ import { CiMobile3, CiMail, CiMapPin } from "react-icons/ci";
 import styles from "./FooterInfo.module.css";
 function FooterInfo() {
   return (
-    <div className={styles.container}>
+    <Grid container gap={10} className={styles.container}>
       <div className={styles.form}>
         <div className={styles.icons}>
           <CiMapPin style={{ color: "#43b1a8" }} size={50} />
@@ -21,9 +21,9 @@ function FooterInfo() {
         </div>
       </div>
       <div className={styles.timeBox}  >
-        <h2 className={styles.timeText}>Radno vrijeme</h2> <h3 className={styles.timeText}>Svakim danom prema dogovorenim terminima</h3>
+        <h2 className={styles.timeText1}>Radno vrijeme</h2> <h3 className={styles.timeText}>Svakim danom prema dogovorenim terminima</h3>
       </div>
-    </div>
+    </Grid>
   );
 }
 

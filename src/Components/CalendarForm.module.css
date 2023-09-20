@@ -41,13 +41,13 @@ width: 1200px;
 
   .scroll {
     max-height: 900px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 @media only screen and (max-width: 768px) {
  
   .scroll {
     max-height: 600px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 }

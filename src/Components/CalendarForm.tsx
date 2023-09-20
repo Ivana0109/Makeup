@@ -22,7 +22,7 @@ type CalendarInfo = {
 };
 
 type Props = {
-  refresh: () => void;
+  refresh?: () => void;
 };
 function CalendarForm({ refresh }: Props) {
 const translate=useTranslation()
@@ -40,7 +40,7 @@ const translate=useTranslation()
     [data]
   );
   const { reservationTimes } = useReservationData(processedDate);
-  console.log(reservationTimes);
+
 
   const canSubmitForm = useMemo(() => {
     if (!data.time || !data.type) {
@@ -73,7 +73,7 @@ return !result.some((item)=>reservationTimes.includes(item))
       type: data.type,
     };
 
-    axios.post("http://localhost:8000/data", saveData).then(() => refresh());
+    axios.post("http://localhost:8000/data", saveData).then(() => refresh && refresh());
   };
 
   return (

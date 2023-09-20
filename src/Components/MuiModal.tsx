@@ -18,7 +18,11 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-function MuiModal({ refresh }) {
+
+type Props={
+  refresh?:()=>void
+}
+function MuiModal({ refresh }:Props) {
   const translate=useTranslation()
 
 

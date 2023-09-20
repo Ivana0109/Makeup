@@ -10,83 +10,21 @@ background-repeat: no-repeat;
 background-size: cover;
  min-height: 600px;
   }
-.priceMuiButton.MuiButton-root{
-   
-    font-family: "Montserrat", sans-serif;
-      
-   height:105px;
-   width: 350px;
-   font-size: 20px;
-        border-radius: 13px;
-        color: rgb(153, 149, 149);
-   
-   border-radius: 30px;
-}
-
-.priceMuiButton.MuiButton-root:hover{
-   background-color:rgb(255, 255, 255,0.4) ;
+.underlineButton{
    color: white;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  transition: 0.5s;
- 
+   font-size: 24px;
+
 }
-
-
-
-.priceSecondMuiButton.MuiButton-root{
-   text-transform: initial;
-   font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-  height:135px;
-  width: 600px;
-  font-size: 20px;
-       border-radius: 13px;
-       color: rgb(153, 149, 149);
-    
-  border-radius: 30px;
-}
-
-.priceSecondMuiButton.MuiButton-root:hover{
-   background-color:rgb(255, 255, 255,0.4) ;
-   color: white;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  transition: 0.5s;
-}
-.priceButtonsAling{
-   display: flex;
-   align-items: center;
-   justify-content: flex-start;
-   gap: 40px;
-}
-
 .priceEuros{
    display: flex;
-   color: rgb(200, 196, 196);
-   font-size: 30px;
-   font-weight: 400;
-   align-items: center;
    justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 25px;
+   font-weight: 700;
 }
 
-
-.underlineButton {
- 
-   font-size: 30px;
-
-   
-   color: rgb(217, 213, 213);
-   font-family: 'Josefin Sans', sans-serif;
- 
- }
- 
- .underlineButton:hover {
-   color: rgb(81, 171, 164);
-   transition: 1.5s;
- 
- 
- }
- 
- /* Variations */
- .underlineButton.left {
-    background-position: left bottom;
- }
+.priceButtonsAling{
+   display: flex;
+   gap: 30px;
+}

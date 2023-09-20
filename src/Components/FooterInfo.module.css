@@ -1,13 +1,11 @@
 .container{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+padding: 40px;
 }
 .form{
    display: flex;
    flex-direction: column;
    gap: 20px;
-        
+        font-weight: 500;
     border-radius: 10px;
 }
 .icons{
@@ -16,12 +14,13 @@
     font-size: 19px;
     gap: 25px;
   }
-  .timeBox{
-    padding: 5px;
-
+  .timeText1{
+    font-weight: 700;
+    text-decoration: underline 2px;
+    font-size: 21px;
   }
   .timeText{
     
-    font-size: 23px;
-    font-weight: 400;
+    font-size: 21px;
+    font-weight: 500;
   }
