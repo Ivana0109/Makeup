@@ -33,54 +33,7 @@ function CoverPhotos() {
 
   return (
     <Grid container className={styles.photosBackground} ref={ref}>
-      <Grid
-        container
-        p={4}
-        justifyContent="center"
-        alignItems="center"
-        md={4}
-        lg={4}
-        xs={12}
-      >
-        <div className={styles.imageWrap}>
-          <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
-            className={styles.img}
-          />
-        </div>
-      </Grid>
-      <Grid
-        container
-        p={4}
-        justifyContent="center"
-        alignItems="center"
-        md={4}
-        lg={4}
-        xs={12}
-      >
-        <div className={styles.imageWrap}>
-          <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
-            className={styles.img}
-          />
-        </div>
-      </Grid>
-      <Grid
-        container
-        p={4}
-        justifyContent="center"
-        alignItems="center"
-        md={4}
-        lg={4}
-        xs={12}
-      >
-        <div className={styles.imageWrap}>
-          <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
-            className={styles.img}
-          />
-        </div>
-      </Grid>
+     
     </Grid>
   );
 }
