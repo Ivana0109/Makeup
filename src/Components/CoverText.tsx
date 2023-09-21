@@ -3,8 +3,6 @@ import styles from "./CoverText.module.css";
 import { Grid } from "@mui/material";
 import useIntersectionObserver from "../utils/useIntersectionObserver";
 function CoverText() {
-
-
   const options = {
     root: null,
     rootMargin: "0px",
@@ -32,27 +30,27 @@ function CoverText() {
   const ref = useIntersectionObserver(revealCallback, options);
   return (
     <div className={styles.container}>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems={"center"}
-        spacing={2}
-        p={10}
-      >
-        <Grid item xs={12} md={6}>
-          <Grid container justifyContent="center" alignItems="center" className={styles.h3}>
-           Individualnim pristupom uzimam u obzir vaš ton kože,
-              kako bih odredila savršen stil
-
-                šminkanja za vas.
-            
-          </Grid>
+      <Grid container justifyContent="center" alignItems={"center"} p={10}>
+        <Grid
+          container
+          xs={12}
+          md={6}
+          justifyContent="center"
+          alignItems="center"
+          className={styles.h3}
+        >
+          Individualnim pristupom uzimam u obzir vaš ton kože, kako bih odredila
+          savršen stil šminkanja za vas.
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Grid container justifyContent="center" ref={ref}>
-            {" "} <div className={styles.imageWrap}>
-            <img src={`${process.env.PUBLIC_URL}/beige.png`} className={styles.img} /></div>
-          </Grid>
+
+        <Grid container xs={12} md={6} justifyContent="center" ref={ref}>
+          {" "}
+          <div className={styles.imageWrap}>
+            <img
+              src={`${process.env.PUBLIC_URL}/beige.png`}
+              className={styles.img}
+            />
+          </div>
         </Grid>
       </Grid>
     </div>

@@ -1,15 +1,12 @@
 import { Button, Grid } from "@mui/material";
-import React from "react";
 import "./ReservationList.css";
 import dayjs from "dayjs";
-import { useMemo } from "react";
-import { timeByType } from "./types";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import useTranslation from "../utils/useTranslate";
-
+import { ReservationFormContext } from "../utils/ReservationFormContext";
 
 function ReservationList({ reservationTimes }) {
-const translate=useTranslation()
+  const translate = useTranslation();
 
   const timeOptions = new Array(27).fill(0).map((item, index) =>
     dayjs()
@@ -19,27 +16,37 @@ const translate=useTranslation()
       .format("HH:mm")
   );
 
- 
-  const processedTimeOptions =timeOptions.map((item) =>
-      reservationTimes.includes(item) ? translate("reserved") : item
-    );
+  const processedTimeOptions = timeOptions.map((item) =>
+    reservationTimes.includes(item) ? translate("reserved") : item
+  );
 
-
-
+  const { handleOpen } = useContext(ReservationFormContext);
 
   return (
-    <Grid container  className="reservationList">
-    
-      <Grid container alignContent={"center"} justifyContent={"start"}  className="appointment" >
-    
-       {translate("appointmentHour")}
+    <Grid container className="reservationList">
+      <Grid
+        container
+        alignContent={"center"}
+        justifyContent={"start"}
+        className="appointment"
+      >
+        {translate("appointmentHour")}
       </Grid>
       {processedTimeOptions.map((item) => (
-        <Grid container alignContent={"center"} justifyContent={"center"}  md={2} xs={3} >
-        
-          <Button 
-              disabled={item ===translate("reserved")} className="reservationButton" size="medium" key={item}>
-         
+        <Grid
+          container
+          alignContent={"center"}
+          justifyContent={"center"}
+          md={2}
+          xs={3}
+        >
+          <Button
+            onClick={handleOpen}
+            disabled={item === translate("reserved")}
+            className="reservationButton"
+            size="medium"
+            key={item}
+          >
             {item}
           </Button>
         </Grid>

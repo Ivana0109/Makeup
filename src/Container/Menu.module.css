@@ -35,8 +35,13 @@ color: black
     height: 155.2px;
   }
 
-  .logo{
-    font-size: 37px;
+  .logo{ display: flex; align-items: center; gap: 20px;
+    font-family: 'Limelight', cursive;
+    font-size: 87px;
+  }
+
+  .logo2{ font-size: 12px;
+    font-weight: 600;
   }
   .container {
   display: flex;
@@ -45,6 +50,11 @@ color: black
   justify-content: flex-end;
   font-weight: bolder;
   gap: 20px;
+}
+
+.containerMobile{
+  display: flex;
+  flex-direction: column;
 }
 
 .mobileContainer {
@@ -60,9 +70,10 @@ color: black
 
 
 .underlineButton {
+  text-transform: uppercase;
   color: inherit;
-	font-size: 135%;
- font-weight: 400; 
+  font-size: 108%;
+ font-weight: 500; 
   
 	text-decoration: none;
 	background: linear-gradient(#111111, #0c0b0b) bottom / 0 .1em no-repeat;
@@ -73,7 +84,6 @@ color: black
 
 .underlineButton:hover {
 	background-size: 100% .2px;
-color: rgb(39, 39, 39);
 }
 
 /* Variations */

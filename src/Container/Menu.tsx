@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import useTranslation from "../utils/useTranslate";
 
 function Menu() {
-  const translate=useTranslation()
+  const translate = useTranslation();
 
   const mobileMenuStyles = {
     bmBurgerButton: {
@@ -15,17 +15,21 @@ function Menu() {
       height: "30px",
     },
     bmBurgerBars: {
-      background: "#3747",
+      background: "#56baba",
     },
+   
     bmBurgerBarsHover: {
-      background: "#a90000",
+      background: "#black",
     },
     bmCrossButton: {
-      height: "24px",
-      width: "24px",
+      color: "black",
+      height: "74px ",
+      width: "74px",
     },
+
     bmCross: {
-      background: "#bdc3c7",
+      background: "black",
+      border: "3px solid black",
     },
     bmMenuWrap: {
       top: "0px",
@@ -33,7 +37,7 @@ function Menu() {
     },
     bmMenu: {
       background: "white",
-      padding: "2.5em 1.5em 0",
+      padding: "2.5em 1.5em 4em 4em",
       fontSize: "1.15em",
       overflow: "hidden",
     },
@@ -41,12 +45,13 @@ function Menu() {
       fill: "#373a47",
     },
     bmItemList: {
-      color: "#b8b7ad",
+      color: "black",
       padding: "0.8em",
+      display: "flex",
+      flexDirection: "column",
+      gap: "60px",
     },
-    bmItem: {
-      display: "inline-block",
-    },
+
     bmOverlay: {
       background: "rgba(0, 0, 0, 0.3)",
     },
@@ -58,7 +63,7 @@ function Menu() {
   };
 
   const top = scrollPosition < 40 ? 40 - scrollPosition : 0;
-  
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, {
       passive: true,
@@ -68,40 +73,48 @@ function Menu() {
     };
   }, []);
 
-  
-
   return (
     <>
-      <div className={styles.mobileContainer}>
-        <MobileMenu noOverlay right styles={mobileMenuStyles}>
-          <Link to={"/"}>
-             {translate("home")}
-          </Link>
-          <Link to={"/popis"}>
-             POPIS
-           </Link>
-        </MobileMenu>
-      </div>
-
-      <div className={scrollPosition<40? styles.containerBox : styles.containerBoxAfterScroll} style={{ top: top }}>
-        <div className={styles.logo} >
+      <div
+        className={
+          scrollPosition < 40
+            ? styles.containerBox
+            : styles.containerBoxAfterScroll
+        }
+        style={{ top: top }}
+      >
+        <div className={styles.logo}>
           {" "}
-          MAKE UP <div className={styles.logo}>SPLIT</div>
+          IB <div className={styles.logo2}>IVANA BABIĆ MAKEUP</div>
         </div>
+
         <div className={styles.container}>
           {" "}
-          <Link  to={"/"}  className={styles.underlineButton}>
-          {translate("home")}
+          <Link to={"/"} className={styles.underlineButton}>
+            {translate("home")}
           </Link>
           <Link to={"/popis"} className={styles.underlineButton}>
-          {translate("reservations")}
+            {translate("reservations")}
           </Link>
-       <Link to={"/opis"} className={styles.underlineButton}>
-       {translate("aboutMe")}
-          </Link> 
+          <Link to={"/opis"} className={styles.underlineButton}>
+            {translate("aboutMe")}
+          </Link>
+        </div>
+
+        <div className={styles.mobileContainer}>
+          <MobileMenu noOverlay right styles={mobileMenuStyles}>
+            <Link to={"/"} className={styles.underlineButton}>
+              {translate("home")}
+            </Link>
+            <Link to={"/popis"} className={styles.underlineButton}>
+              {translate("reservations")}
+            </Link>
+            <Link to={"/opis"} className={styles.underlineButton}>
+              {translate("aboutMe")}
+            </Link>
+          </MobileMenu>
         </div>
       </div>
-
     </>
   );
 }

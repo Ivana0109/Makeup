@@ -1,53 +1,63 @@
-
 .form {
-    padding: 10px;
-    background-color:white;
-  
-    border-radius: 12px;
-width: 1200px;
-  }
-  .MuiTypography-root.MuiTypography{
-    font-weight: 700;
-  }
+  padding: 10px;
+  background-color: white;
 
+  border-radius: 12px;
+  width: 1200px;
+}
+.MuiTypography-root.MuiTypography {
+  font-weight: 700;
+}
 
-  .button {
-    width: 300px;
-    height: 80px;
-    border-radius: 27px;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    outline: none;
-    border: none;
-    
-    font-size: 20px;
-    color:white;
-    background-color:black;
-  }
-  .button:hover {
-    color: black;
-    background-color: rgb(255, 228, 196,0.6);
-    border: #59bab2 solid 3px;
-    outline: none;
-   
-  }
-  .buttonn {
-    width: inherit;
-    border-radius: inherit;
+.sendMuiButton button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  height: 80px;
+  width: 300px;
+  font-size: 23px;
+  border-radius: 13px;
+  background-color: white;
+  color: black;
+  border-radius: 14px;
+  border: grey 3px solid;
+  text-transform: initial;
+}
 
+.button {
+  width: 300px;
+  height: 80px;
+  border-radius: 27px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  outline: none;
+  border: none;
 
-    background-color:white;
-  }
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+.button:hover {
+  color: black;
+  background-color: rgb(255, 228, 196, 0.6);
+  border: #59bab2 solid 3px;
+  outline: none;
+}
+.buttonn {
+  width: inherit;
+  border-radius: inherit;
 
+  background-color: white;
+}
 
-  .scroll {
-    max-height: 900px;
-    overflow-y: scroll;
+.scroll {
+  max-height: 900px;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 768px) {
- 
   .scroll {
     max-height: 600px;
     overflow-y: scroll;
-}
+  }
 }
