@@ -29,6 +29,7 @@
 .imageWrap img {
   transform: scale(0.8);
   transition: 2s ease-out;
+  max-width: 100%;
 }
 
 .animating .imageWrap {
@@ -40,4 +41,5 @@
 .animating img {
   transform: scale(1);
   transition: 1s ease-out;
+  max-width: 100%;
 }
