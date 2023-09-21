@@ -43,15 +43,7 @@ function CoverText() {
           savršen stil šminkanja za vas.
         </Grid>
 
-        <Grid container xs={12} md={6} justifyContent="center" ref={ref}>
-          {" "}
-          <div className={styles.imageWrap}>
-            <img
-              src={`${process.env.PUBLIC_URL}/beige.png`}
-              className={styles.img}
-            />
-          </div>
-        </Grid>
+      
       </Grid>
     </div>
   );
