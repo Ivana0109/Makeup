@@ -1,9 +1,10 @@
 .modalMuiButton.MuiButton-root{
      font-family: "Montserrat", sans-serif;
      font-weight: 700;
-     height: 126px;
-     width: 390px;
-    font-size: 23px;
+     height: 94px;
+     width: 288px;
+     font-size: 17px;
+ 
          border-radius: 13px;
     background-color:#39c9bb;
     color: white;

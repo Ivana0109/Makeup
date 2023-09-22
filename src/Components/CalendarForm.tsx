@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, {useMemo, useState } from "react";
 import styles from "./CalendarForm.module.css";
 
 import { Button, Grid } from "@mui/material";
@@ -71,7 +71,7 @@ function CalendarForm({ refresh }: Props) {
     };
 
     axios
-      .post("http://localhost:8000/data", saveData)
+      .post("http://192.168.0.20:8000/data", saveData)
       .then(() => refresh && refresh());
   };
 

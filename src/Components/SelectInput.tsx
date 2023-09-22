@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./SelectInput.css";
-import { Box, InputLabel, MenuItem, OutlinedInput } from "@mui/material";
+import { Box,  MenuItem } from "@mui/material";
 import Select from "@mui/material/Select";
 
 type Props = {

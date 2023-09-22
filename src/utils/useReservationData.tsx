@@ -15,7 +15,7 @@ useReservationData(selectedDate?: Date) {
         ? dayjs(selectedDate).format("YYYY-MM-DD")
         : "";
       axios
-        .get(`http://localhost:8000/data?date_like=${dateValue}`)
+        .get(`http://192.168.0.20:8000/data?date_like=${dateValue}`)
         .then((res) => setReservations(res.data));
     }
   }, [selectedDate]);

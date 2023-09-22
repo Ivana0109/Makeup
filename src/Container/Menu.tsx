@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 import { slide as MobileMenu } from "react-burger-menu";
-import { Button } from "@mui/material";
+
 import useTranslation from "../utils/useTranslate";
 
 function Menu() {
@@ -83,6 +83,7 @@ function Menu() {
         }
         style={{ top: top }}
       >
+        
         <div className={styles.logo}>
           {" "}
           IB <div className={styles.logo2}>IVANA BABIĆ MAKEUP</div>
@@ -114,6 +115,7 @@ function Menu() {
             </Link>
           </MobileMenu>
         </div>
+      
       </div>
     </>
   );

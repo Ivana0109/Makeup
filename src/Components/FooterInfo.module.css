@@ -1,5 +1,5 @@
 .container{
-padding: 40px;
+
 }
 .form{
    display: flex;
@@ -11,16 +11,17 @@ padding: 40px;
 .icons{
     display: flex;
    align-items: center;
-    font-size: 19px;
+    font-size: 15px;
     gap: 25px;
   }
   .timeText1{
     font-weight: 700;
-    text-decoration: underline 2px;
-    font-size: 21px;
+  
+    font-size: 16px;
   }
   .timeText{
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
   }
+

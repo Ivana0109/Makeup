@@ -13,7 +13,7 @@ const useIntersectionObserver = (cb:IntersectionObserverCallback, options?:Inter
   
       observer.current = new window.IntersectionObserver(cb, options)
       observer.current.observe(node)
-    }, [])
+    }, [cb,options])
 
   }
 

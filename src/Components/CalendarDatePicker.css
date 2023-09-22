@@ -2,16 +2,16 @@
     {
         font-family: "Montserrat", sans-serif;
      font-weight: 500;
-    width: 80px;
-    height: 80px;
-    font-size: 18px;
+    width: 60px;
+    height: 60px;
+    font-size: 13px;
     color: rgb(20, 20, 20);
     border-radius: 24px;
     
 }
 .MuiDateCalendar-root {
-    width: 600px !important;
-    max-height: 600px !important; 
+    width: 480px !important;
+    max-height: 480px !important; 
 }
 .MuiDateCalendar-root .MuiPickersLayout-contentWrapper,
 .MuiDateCalendar-root .MuiPickersSlideTransition-root{
@@ -20,9 +20,9 @@
 
     .calendarDatePicker .MuiTypography-root.MuiTypography-body2 {
         font-family: "Montserrat", sans-serif;
-        font-size: 22px;
+        font-size: 13px;
         font-weight: 700;
-        padding-top: 20px;
+   
 padding-bottom: 20px;    }
       
 
@@ -39,7 +39,7 @@ padding-bottom: 20px;    }
 
  .MuiPickersCalendarHeader-label{
     padding-left: 13px;
-        font-size: 20px;
+        font-size: 13px;
         font-weight: 700;
         color: black;
         font-family: "Montserrat", sans-serif;
@@ -56,16 +56,16 @@ padding-bottom: 20px;    }
 .MuiInputBase-root.MuiOutlinedInput-root {
     border-radius: 13px !important;
    font-weight: 500;
-    height: 65px;
+    height: 54px;
     font-family:   "Montserrat", sans-serif;
        
-          font-size:18px
+          font-size:13px
 }
 
 .MuiTypography-root.MuiTypography-body2{
     font-family:   "Montserrat", sans-serif;
     
-    font-size:18px
+    font-size:13px
 }
 
 

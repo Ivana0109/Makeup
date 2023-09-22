@@ -1,8 +1,8 @@
-import { Button, FormControl, Grid, InputLabel } from "@mui/material";
+import { Button,  Grid,} from "@mui/material";
 import dayjs from "dayjs";
-import React, { useState } from "react";
+
 import "./ButtonTimePicker.css";
-import { timeByType } from "./types";
+
 import useTranslation from "../utils/useTranslate";
 
 function ButtonTimePicker({ onChange, value, reservationTimes }) {
@@ -25,9 +25,9 @@ const translate=useTranslation()
   return (
     <div>
       <div className="timePicker">{translate("selectTime")} </div>
-      <Grid container justifyContent="center" gap={8}>
+      <Grid container justifyContent="center" >
         {processedTimeOptions.map((item) => (
-          <Grid item xs={3} md={1}>
+          <Grid container justifyContent="center" alignItems={"center"}  lg={2} xs={4} >
             {" "}
             <Button
               className="customMuiButton"

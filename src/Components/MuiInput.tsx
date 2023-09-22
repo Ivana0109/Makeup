@@ -10,7 +10,7 @@ type Props = {
 };
 function MuiInput({ setValue, title, type, value }: Props) {
   return (
-    <Box sx={{ width: 1 }}>
+    <Box>
       <TextField
         className="customMui"
         fullWidth
@@ -20,7 +20,7 @@ function MuiInput({ setValue, title, type, value }: Props) {
             fontFamily: "Montserrat ",
             
             paddingLeft: "15px",
-            fontSize: "18px",
+            fontSize: "13px",
     
           },
         }}
@@ -29,16 +29,16 @@ function MuiInput({ setValue, title, type, value }: Props) {
             "& fieldset": {
               fontFamily: "Montserrat ",
              
-              border: "2px solid #59bab2 !important",
-              borderRadius: "13px",
+              border: "1px solid #59bab2 !important",
+              borderRadius: "9px",
             },
             "&:hover fieldset": {
               border: "2px solid #59bab2 !important",
-              borderRadius: "13px",
+              borderRadius: "9px",
             },
             "&:focus-within fieldset, &:focus-visible fieldset": {
-              border: "3px solid #59bab2 !important",
-              borderRadius: "13px",
+              border: "2px solid #59bab2 !important",
+              borderRadius: "9px",
             },
           },
         }}

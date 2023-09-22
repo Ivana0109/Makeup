@@ -1,62 +1,47 @@
+.customMuiButton.MuiButton-root {
+  text-transform: initial;
 
-.customMuiButton.MuiButton-root{
-    text-transform: initial ;
-    height:50px;
-    width: 100px;
-    font-family: "Montserrat", sans-serif;
-    font-weight:600 !important
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600 !important
     ;
-    font-size: 17px !important;
-background-color: transparent ;
-    color: black;
-    border-style: none !important;
-    box-shadow: none !important;
-
-    }
-
-
-
-    .customMuiButton.MuiButton-root.MuiButton-contained {
-       
-   
-        color: rgb(73, 202, 189);
-        
-    
-        }
-
-.timePicker{
-    padding-top: 30px;
-    padding-bottom: 40px;
-    font-size: 22px;
-    font-weight: 700;
+  font-size: 13px !important;
+  background-color: transparent;
+  color: black;
+  border-style: none !important;
+  box-shadow: none !important;
 }
-    .customMuiButton.MuiButton-outlined{
-        font-weight:600 !important
+
+.customMuiButton.MuiButton-root.MuiButton-contained {
+  color: rgb(73, 202, 189);
+}
+
+.timePicker {
+  padding-top: 30px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+.customMuiButton.MuiButton-outlined {
+  font-weight: 600 !important
         ;
-   
-        font-size: 17px !important;
-        
-   border:none  !important;
-    }
 
-    .customMuiButton.MuiButton-root:hover{
+  font-size: 13px !important;
 
-        background-color: transparent !important;
-
-        }
-
-
-        
-.customMuiButton.MuiButton-root.Mui-disabled{
-    font-size: 14px !important;
-    font-weight: 600;
-   color:  rgb(70, 69, 69);
-   border:   rgb(193, 193, 193) 2px solid;
+  border: none !important;
 }
-    
-        .customMuiButton.MuiButton-outlined:hover{
-            color: #0ec5b5 !important  ;
-            font-weight: 600;
-        }
-    
-    
+
+.customMuiButton.MuiButton-root:hover {
+  background-color: transparent !important;
+}
+
+.customMuiButton.MuiButton-root.Mui-disabled {
+  font-size: 13px !important;
+  font-weight: 600;
+  color: rgb(70, 69, 69);
+  border: rgb(193, 193, 193) 2px solid;
+}
+
+.customMuiButton.MuiButton-outlined:hover {
+  color: #0ec5b5 !important  ;
+  font-weight: 600;
+}
