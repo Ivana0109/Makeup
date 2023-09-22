@@ -97,9 +97,7 @@ function Menu() {
           <Link to={"/popis"} className={styles.underlineButton}>
             {translate("reservations")}
           </Link>
-          <Link to={"/opis"} className={styles.underlineButton}>
-            {translate("aboutMe")}
-          </Link>
+      
         </div>
 
         <div className={styles.mobileContainer}>
