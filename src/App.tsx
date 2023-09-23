@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import styles from "./App.module.css";
 import Menu from "./Container/Menu";
 import UpperHeader from "./Container/UpperHeader";
@@ -20,7 +20,7 @@ function App() {
             <Route path="popis" element={<Calendar />} />
             <Route
         path="*"
-        element={<Navigate to="home" replace />}
+        element={<Navigate to="home" replace={true} />}
     />
           </Routes>
         </Router>
