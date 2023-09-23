@@ -44,7 +44,7 @@ function CoverPhotos() {
       >
         <div className={styles.imageWrap}>
           <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
+            src={`${process.env.PUBLIC_URL}/colors.jpg`}
             className={styles.img}
           />
         </div>
@@ -60,7 +60,7 @@ function CoverPhotos() {
       >
         <div className={styles.imageWrap}>
           <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
+            src={`${process.env.PUBLIC_URL}/colors1.jpg`}
             className={styles.img}
           />
         </div>
@@ -76,7 +76,7 @@ function CoverPhotos() {
       >
         <div className={styles.imageWrap}>
           <img
-            src={`${process.env.PUBLIC_URL}/beige.png`}
+            src={`${process.env.PUBLIC_URL}/colors2.jpg`}
             className={styles.img}
           />
         </div>

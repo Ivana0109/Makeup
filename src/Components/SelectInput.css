@@ -1,10 +1,10 @@
  .MuiOutlinedInput-notchedOutline{
-    border:  #59bab2 2px solid    !important;
+    border:  #59bab2 1.5px solid    !important;
  }
 
 
 .MuiPaper-root.MuiMenu-paper{
-border-radius: 16px;
+border-radius: 10px;
 
 }
  .MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters{

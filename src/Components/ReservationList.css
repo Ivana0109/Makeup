@@ -1,11 +1,11 @@
 .reservationList{
     
-    background-color:white;
-    border:rgb(201, 201, 201) 1px solid;
-padding: 40px;
+    background-color: white;
+    border: rgb(201, 201, 201) 1px solid;
+    padding: 5px;
     border-radius: 10px;
-   font-size: 20px;  
-max-width: 702px;
+   
+    max-width: 520px;
 
 }
 

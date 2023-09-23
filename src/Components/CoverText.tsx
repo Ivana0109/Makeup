@@ -34,20 +34,36 @@ function CoverText() {
         <Grid
           container
           xs={12}
-          md={6}
+          md={4}
           justifyContent="center"
           alignItems="center"
           className={styles.h3}
+          p={2}
         >
-          Individualnim pristupom uzimam u obzir vaš ton kože, kako bih odredila
-          savršen stil šminkanja za vas.
+          Enjoy the world of makeup, where artistry meets individuality. Here,
+          makeup isn't just about enhancing beauty; it's about crafting a unique
+          masterpiece that mirrors your inner radiance.
         </Grid>
+        <Grid
+          container
+          xs={12}
+          md={4}
+          justifyContent="center"
+          alignItems="center"
+          className={styles.h3}
+          p={2}
+        >
+          My approach is as unique as you are. I consider your skin tone, the occasion, and your personal wishes to curate the perfect makeup style exclusively for you.
 
-        <Grid container xs={12} md={6} justifyContent="center" ref={ref}>
+        </Grid>
+        
+
+        <Grid container xs={12} md={4} justifyContent="center" ref={ref}>
           {" "}
           <div className={styles.imageWrap}>
             <img
-              src={`${process.env.PUBLIC_URL}/beige.png`} alt=""
+              src={`${process.env.PUBLIC_URL}/colors3.jpg`}
+              alt=""
               className={styles.img}
             />
           </div>

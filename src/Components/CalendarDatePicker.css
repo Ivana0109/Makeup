@@ -54,7 +54,7 @@ padding-bottom: 20px;    }
    
     
 .MuiInputBase-root.MuiOutlinedInput-root {
-    border-radius: 13px !important;
+    border-radius: 9px !important;
    font-weight: 500;
     height: 54px;
     font-family:   "Montserrat", sans-serif;

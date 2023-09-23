@@ -1,6 +1,6 @@
 .customMuiButton.MuiButton-root {
   text-transform: initial;
-
+padding: 30px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600 !important
     ;

@@ -1,10 +1,9 @@
 .calendarContainer {
-  width:  436px;
-  height: 599px;
-  background-color:white;
-  border-radius: 10px;
-  padding: 30px;
-
+  width: 398px;
+    height: 599px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
 
 }
 
@@ -145,12 +144,14 @@ font-weight: 600;
 
 .react-calendar__navigation__label {
 
-  height: 60px;
-  border-radius: 13px;
-font-weight: 500;
-border: rgb(194, 193, 193) 2px solid;  background-color: white;
+  height: 52px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: rgb(194, 193, 193) 2px solid;
+  background-color: white;
   font-size: 14px;
-  color:black;
+  color: black;
+
 }
 
 
