@@ -1,9 +1,7 @@
-.container{
 
-}
 .form{
-   display: flex;
-   flex-direction: column;
+display: flex;
+flex-direction: column;
    gap: 20px;
         font-weight: 500;
     border-radius: 10px;
@@ -24,4 +22,7 @@
     font-size: 14px;
     font-weight: 500;
   }
-
+  .bottomText{
+    display: flex;
+    flex-direction: column;
+  }

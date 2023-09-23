@@ -12,7 +12,7 @@ function CoverPage() {
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.coverText}>DNEVNI, VEČERNJI, SVEČANI  MAKEUP</div>
+        <div className={styles.coverText}>DAILY, EVENING, CEREMONIAL MAKEUP</div>
        
 
         <MuiModal  />
