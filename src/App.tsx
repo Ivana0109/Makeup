@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import styles from "./App.module.css";
 import Menu from "./Container/Menu";
 import UpperHeader from "./Container/UpperHeader";
@@ -16,9 +16,12 @@ function App() {
           <Menu />
           <div className={styles.container}></div>
           <Routes>
-            <Route path="" element={<CoverPage />} />
+            <Route path="/" element={<CoverPage />} />
             <Route path="popis" element={<Calendar />} />
-        
+            <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+    />
           </Routes>
         </Router>
       </LanguageProvider>
