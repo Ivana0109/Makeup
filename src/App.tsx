@@ -16,11 +16,11 @@ function App() {
           <Menu />
           <div className={styles.container}></div>
           <Routes>
-            <Route path="/" element={<CoverPage />} />
+            <Route path="home" element={<CoverPage />} />
             <Route path="popis" element={<Calendar />} />
             <Route
         path="*"
-        element={<Navigate to="/" replace />}
+        element={<Navigate to="home" replace />}
     />
           </Routes>
         </Router>

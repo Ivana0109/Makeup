@@ -91,7 +91,7 @@ function Menu() {
 
         <div className={styles.container}>
           {" "}
-          <Link to={"/"} className={styles.underlineButton}>
+          <Link to={"/home"} className={styles.underlineButton}>
             {translate("home")}
           </Link>
           <Link to={"/popis"} className={styles.underlineButton}>
@@ -102,7 +102,7 @@ function Menu() {
 
         <div className={styles.mobileContainer}>
           <MobileMenu noOverlay right styles={mobileMenuStyles}>
-            <Link to={"/"} className={styles.underlineButton}>
+            <Link to={"/home"} className={styles.underlineButton}>
               {translate("home")}
             </Link>
             <Link to={"/popis"} className={styles.underlineButton}>
