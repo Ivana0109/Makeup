@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Makeup/static/css/main.ebbf024f.css",
-    "main.js": "/Makeup/static/js/main.ce12aa3e.js",
+    "main.css": "/Makeup/static/css/main.c161d6f2.css",
+    "main.js": "/Makeup/static/js/main.5a594fbb.js",
     "static/js/787.1e693262.chunk.js": "/Makeup/static/js/787.1e693262.chunk.js",
     "static/media/beige.png": "/Makeup/static/media/beige.05563ac44350e01ba24f.png",
     "index.html": "/Makeup/index.html",
-    "main.ebbf024f.css.map": "/Makeup/static/css/main.ebbf024f.css.map",
-    "main.ce12aa3e.js.map": "/Makeup/static/js/main.ce12aa3e.js.map",
+    "main.c161d6f2.css.map": "/Makeup/static/css/main.c161d6f2.css.map",
+    "main.5a594fbb.js.map": "/Makeup/static/js/main.5a594fbb.js.map",
     "787.1e693262.chunk.js.map": "/Makeup/static/js/787.1e693262.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebbf024f.css",
-    "static/js/main.ce12aa3e.js"
+    "static/css/main.c161d6f2.css",
+    "static/js/main.5a594fbb.js"
   ]
 }
