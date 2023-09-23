@@ -25,6 +25,8 @@ color: rgb(255, 253, 253);
   max-width:1163px;
     text-align: center;
     padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
     
  }
 

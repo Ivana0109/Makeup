@@ -1,12 +1,25 @@
+
+.wrapper {
+  position: absolute;
+  top: 0.5px;
+  left: 0;
+  right: 0;
+  bottom: 0.5px;
+  overflow-x: hidden; /* or any other value */
+  overflow-y: auto; /* or any other value */
+}
+
 .container{
    
   /* Create the parallax scrolling effect */
-  padding-top: 155.2px;
+
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-    min-height: 90vh;
+
+ 
+    min-height: 100vh;
 background-image: url("../../public/beige.png");
 display: flex;
 flex-direction: column;
@@ -17,7 +30,7 @@ font-size: 59px;
 font-weight: 900;
 
 color: rgb(255, 253, 253);
-padding-bottom: 20px;
+
   }
  
  

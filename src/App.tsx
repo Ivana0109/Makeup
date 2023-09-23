@@ -12,8 +12,7 @@ function App() {
     <ReservationFormProvider>
       <LanguageProvider>
         <Router>
-          <UpperHeader />
-          <Menu />
+    
           <div className={styles.container}></div>
           <Routes>
             <Route path="home" element={<CoverPage />} />

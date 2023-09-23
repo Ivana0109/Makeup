@@ -13,7 +13,7 @@ function Calendar() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const {refresh,reservationTimes}=useReservationData(selectedDate)
 
-  return (
+  return (<div className={styles.wrapper}>
     <div className={styles.container}>
       <Grid container  >
       
@@ -29,7 +29,7 @@ function Calendar() {
         </Grid>
         </Grid>
       </Grid>
-    </div>
+    </div></div>
   );
 }
 
