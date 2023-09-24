@@ -20,9 +20,10 @@ function FooterInfo() {
           <div> babicivana0109@gmail.com</div>
         </div>
       </Grid>
-      <Grid container lg={12} className={styles.bottomText} >
-        <h2 className={styles.timeText1}>Working hours</h2>{" "}
-        <h3 className={styles.timeText}>
+      <Grid container lg={12} gap={1} >
+        <Grid lg={12}>
+        <h2 className={styles.timeText1}>Working hours</h2>{" "}</Grid>
+        <Grid lg={12}></Grid><h3 className={styles.timeText}>
         EVERY DAY ACCORDING TO THE AGREED DATES
         </h3>
       </Grid>
