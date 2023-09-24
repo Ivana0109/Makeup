@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  padding-top: 155.2px;
  
     min-height: 100vh;
 background-image: url("../../public/beige.png");
@@ -19,6 +19,7 @@ justify-content: center;
 
 font-size: 59px;
 font-weight: 900;
+padding-bottom: 20px;
 
   }
  
